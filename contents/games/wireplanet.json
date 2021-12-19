@@ -1,0 +1,10 @@
+{
+  "title": "WirePlanet",
+  "genre": "シューティング",
+  "platform": ["Windows"],
+  "titleScreenShot": "./wireplanet/wp_title_sc.png",
+  "officialPageUrl": "https://planetagamelabo.com/homepage/games/wireplanet",
+  "lastUpdateDate": "2016-05-01",
+  "currentVersion": "v1.1.1",
+  "catchPhrase": "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム"
+}

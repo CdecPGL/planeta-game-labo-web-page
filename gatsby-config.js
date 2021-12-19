@@ -1,31 +1,43 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "プラネタゲームラボ",
+    siteUrl: 'https://www.yourdomain.tld',
+    title: 'プラネタゲームラボ',
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-127082222-2",
+        trackingId: 'UA-127082222-2',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/icon.png",
+        icon: 'src/images/icon.png',
       },
     },
-    "gatsby-plugin-mdx",
+    'gatsby-plugin-mdx',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
+        name: 'games',
+        path: './contents/games/',
+      }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'notifications',
+        path: './contents/notifications/',
+      }
+    },
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-typegen',
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-json',
+    'gatsby-transformer-remark',
   ],
 };
