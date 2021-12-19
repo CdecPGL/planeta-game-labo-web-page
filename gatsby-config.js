@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "homepage",
+    title: "プラネタゲームラボ",
   },
   plugins: [
     {
