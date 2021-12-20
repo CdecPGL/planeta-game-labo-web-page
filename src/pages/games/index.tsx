@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 
-const Games: React.FC<{data: GatsbyTypes.GamesQuery}> = ({data}) => {
+const Games: React.FC<{ data: GatsbyTypes.GamesQuery }> = ({ data }) => {
   return <Layout>Games</Layout>;
 };
 export default Games;
