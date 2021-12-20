@@ -1,10 +1,38 @@
 {
   "title": "飛行可能性を得た石頭少女いしあたまーるちゃん",
-  "genre": "アクション",
-  "platform": ["Windows"],
-  "titleScreenShot": "./wireplanet/wp_title_sc.png",
-  "officialPageUrl": "https://planetagamelabo.com/homepage/games/wireplanet",
-  "lastUpdateDate": "2016-10-16",
+  "explanation": "空飛ぶ石頭少女を操作して、上から落ちてくる岩や鉄球を破壊するだけの謎のゲーム「飛行可能性を得た石頭少女いしあたまーるちゃん」紹介ページです。",
+  "summary": [
+    "空飛ぶ石頭少女を操作して、上から落ちてくる岩や鉄球を破壊するだけの謎のゲームです。",
+    "落ちてくるアイテームを取ると、少女が伸びたり大きくなったり、頭が増えたりアフロになったりステキな効果がでてしまいます。",
+    "アイテームを駆使したりしなかったりして、ハイスコアを目指すと良いでしょう。",
+    "意味が分からなくても深く考えてはいけません。時間の無駄です。"
+  ],
+  "genres": ["アクション"],
+  "platforms": ["Windows"],
+  "tags": ["いしあたまーるちゃん", "謎ゲー"],
+  "officialPageUrl": null,
+  "releaseDate": "2016-10-16",
+  "updateDate": "2016-10-16",
   "currentVersion": "v1.0.0",
-  "catchPhrase": "空飛ぶ石頭少女を操作して、上から落ちてくる岩や鉄球を破壊するだけの謎のゲーム"
+  "catchPhrase": "空飛ぶ石頭少女を操作して、上から落ちてくる岩や鉄球を破壊するだけの謎のゲーム",
+  "screenShots": [
+    "./ishiatamachan2/isiatama2_ss_title.png",
+    "./ishiatamachan2/isiatama2_ss_1.png",
+    "./ishiatamachan2/isiatama2_ss_2.png"
+  ],
+  "stores": [
+    {
+      "platform": "Windows",
+      "sites": [
+        {
+          "name": "ふりーむ",
+          "url": "https://www.freem.ne.jp/win/game/13123"
+        },
+        {
+          "name": "Vector",
+          "url": "https://www.vector.co.jp/soft/winnt/game/se514364.html"
+        }
+      ]
+    }
+  ]
 }

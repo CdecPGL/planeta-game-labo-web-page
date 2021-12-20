@@ -1,10 +1,37 @@
 {
   "title": "逼迫性の高いだんごむし少女だんごむしむしむしむっしちゃん",
-  "genre": "アクション",
-  "platform": ["Windows"],
-  "titleScreenShot": "./wireplanet/wp_title_sc.png",
-  "officialPageUrl": "https://planetagamelabo.com/homepage/games/wireplanet",
-  "lastUpdateDate": "2016-01-18",
+  "explanation": "寿命の迫っただんごむしの少女を操作して、逃げていくわらじむし共を爆殺するだけの謎のゲーム「逼迫性の高いだんごむし少女だんごむしむしむしむっしちゃん」紹介ページです。",
+  "summary": [
+    "寿命の迫っただんごむしの少女を操作して、逃げていくわらじむし共を爆殺するだけの謎のゲームです。",
+    "漂ってくるアイテッムを取ると、少女が伸びたり大きくなったり、団子になったりビームを照射したり過激な効果がでてしまいます。少女の寿命が尽きる前に、アイテッムを駆使して最高得点を目指すべきです。",
+    "わらじむしが可哀想でも意味がわからなくても深く考えてはいけません。"
+  ],
+  "genres": ["アクション"],
+  "tags": ["謎ゲー"],
+  "platforms": ["Windows"],
+  "officialPageUrl": null,
+  "releaseDate": "2016-01-18",
+  "updateDate": "2016-01-18",
   "currentVersion": "v1.0.0",
-  "catchPhrase": "寿命の迫っただんごむしの少女を操作して、逃げていくわらじむし共を爆殺するだけの謎のゲーム"
+  "catchPhrase": "寿命の迫っただんごむしの少女を操作して、逃げていくわらじむし共を爆殺するだけの謎のゲーム",
+  "screenShots": [
+    "./dangomushichan/screen_shot_1.jpg",
+    "./dangomushichan/screen_shot_0.jpg",
+    "./dangomushichan/screen_shot_2.jpg"
+  ],
+  "stores": [
+    {
+      "platform": "Windows",
+      "sites": [
+        {
+          "name": "ふりーむ",
+          "url": "https://www.freem.ne.jp/win/game/11006"
+        },
+        {
+          "name": "Vector",
+          "url": "https://www.vector.co.jp/soft/winnt/game/se512292.html"
+        }
+      ]
+    }
+  ]
 }

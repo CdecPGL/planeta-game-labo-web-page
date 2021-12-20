@@ -1,10 +1,31 @@
 {
   "title": "WirePlanet",
-  "genre": "シューティング",
-  "platform": ["Windows"],
-  "titleScreenShot": "./wireplanet/wp_title_sc.png",
+  "explanation": "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム「WirePlanet」の紹介ページです。",
+  "summary": [
+    "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム。初めて完成させたゲームです。"
+  ],
+  "genres": ["シューティング"],
+  "tags": [],
+  "platforms": ["Windows"],
   "officialPageUrl": "https://planetagamelabo.com/homepage/games/wireplanet",
-  "lastUpdateDate": "2016-05-01",
+  "releaseDate": "2014-11-08",
+  "updateDate": "2016-05-01",
   "currentVersion": "v1.1.1",
-  "catchPhrase": "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム"
+  "catchPhrase": "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム",
+  "screenShots": ["./wireplanet/wp_title_sc.png"],
+  "stores": [
+    {
+      "platform": "Windows",
+      "sites": [
+        {
+          "name": "ふりーむ",
+          "url": "https://www.freem.ne.jp/win/game/7911"
+        },
+        {
+          "name": "Vector",
+          "url": "https://www.vector.co.jp/soft/winnt/game/se508399.html"
+        }
+      ]
+    }
+  ]
 }

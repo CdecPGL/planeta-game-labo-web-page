@@ -7,20 +7,20 @@ import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image';
 const GamesArea: React.FC = () => {
   const data = useStaticQuery<GatsbyTypes.GamesAreaQuery>(graphql`
     query GamesArea {
-      allGamesJson(sort: { fields: lastUpdateDate, order: DESC }) {
+      allGamesJson(sort: { fields: updateDate, order: DESC }) {
         nodes {
           title
-          genre
-          platform
-          titleScreenShot {
+          genres
+          platforms
+          officialPageUrl
+          updateDate
+          currentVersion
+          catchPhrase
+          screenShots {
             childImageSharp {
               gatsbyImageData(width: 200, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
-          officialPageUrl
-          lastUpdateDate
-          currentVersion
-          catchPhrase
         }
       }
     }
@@ -31,16 +31,16 @@ const GamesArea: React.FC = () => {
       <h2>ゲーム</h2>
       <div className='grid grid-cols-3 gap-4'>
         {data.allGamesJson.nodes.map((g, i) => {
-          const screenShotImage = getImage(g.titleScreenShot as ImageDataLike);
+          const screenShotImage = getImage(g.screenShots![0] as ImageDataLike);
           return (
             <div key={i} className='max-w-sm rounded overflow-hidden shadow-lg'>
               <div className=''>
                 <p>
-                  {DateTime.fromISO(g.lastUpdateDate ?? '1900-01-01').toFormat('yyyy/MM/dd更新')}(
+                  {DateTime.fromISO(g.updateDate ?? '1900-01-01').toFormat('yyyy/MM/dd更新')}(
                   {g.currentVersion})
                 </p>
-                <p>ジャンル:{g.genre}</p>
-                <p>プラットフォーム:{g.platform?.join('、') ?? 'なし'}</p>
+                <p>ジャンル:{g.genres?.join('、') ?? '不明'}</p>
+                <p>プラットフォーム:{g.platforms?.join('、') ?? '不明'}</p>
               </div>
 
               <div>

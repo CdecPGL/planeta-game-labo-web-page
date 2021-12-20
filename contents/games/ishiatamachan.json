@@ -1,10 +1,46 @@
 {
   "title": "伸縮性の高い石頭少女いしあたまーるちゃん",
-  "genre": "アクション",
-  "platform": ["Android", "Windows"],
-  "titleScreenShot": "./wireplanet/wp_title_sc.png",
-  "officialPageUrl": "https://planetagamelabo.com/homepage/games/wireplanet",
-  "lastUpdateDate": "2015-08-18",
+  "explanation": "伸縮性の高い石頭少女を操作して上から落ちてくる岩を破壊するだけの謎のゲーム「伸縮性の高い石頭少女いしあたまーるちゃん」紹介ページです。",
+  "summary": [
+    "伸縮性の高い石頭少女を操作して上から落ちてくる岩を破壊するだけの謎のゲームです。",
+    "アイテームを取ると、少女が伸びたり大きくなったり、ハゲたり意味の分からない効果がでてしまいます。できるもんならそれらを駆使してハイスコアを目指したり、目指さなかったりするといいのではないのでしょうか。",
+    "訳が分からなくてもあまり深く考えてはいけません。"
+  ],
+  "genres": ["アクション"],
+  "platforms": ["Android", "Windows"],
+  "tags": ["いしあたまーるちゃん", "謎ゲー"],
+  "officialPageUrl": null,
+  "releaseDate": "2015-05-10",
+  "updateDate": "2015-08-18",
   "currentVersion": "v2.1.0",
-  "catchPhrase": "伸縮性の高い石頭少女を操作して上から落ちてくる岩を破壊するだけの謎のゲーム"
+  "catchPhrase": "伸縮性の高い石頭少女を操作して上から落ちてくる岩を破壊するだけの謎のゲーム",
+  "screenShots": [
+    "./ishiatamachan/title_thum.png",
+    "./ishiatamachan/title_thum.png",
+    "./ishiatamachan/title_thum.png"
+  ],
+  "stores": [
+    {
+      "platform": "Windows",
+      "sites": [
+        {
+          "name": "ふりーむ",
+          "url": "https://www.freem.ne.jp/win/game/9197"
+        },
+        {
+          "name": "Vector",
+          "url": "https://www.vector.co.jp/soft/winnt/game/se511408.html"
+        }
+      ]
+    },
+    {
+      "platform": "Android",
+      "sites": [
+        {
+          "name": "GooglePlay",
+          "url": "http://www.vector.co.jp/soft/winnt/game/se511408.html"
+        }
+      ]
+    }
+  ]
 }
