@@ -39,6 +39,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-transformer-json',
     'gatsby-transformer-remark',
-    'gatsby-plugin-emotion',
+    'gatsby-plugin-postcss',
   ],
 };

@@ -1,14 +1,15 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import { GlobalStyles } from 'twin.macro';
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div tw="font-sans bg-gradient-to-b from-blue-600 to-blue-200">
-      <GlobalStyles />
+    <div className='font-sans bg-gradient-to-b from-blue-600 to-sky-200'>
       <Header />
-      {children}
+      <div className='flex'>
+        <div className="flex-auto"> {children}</div>
+        <div className="basis-96"></div>
+      </div>
       <Footer />
     </div>
   );

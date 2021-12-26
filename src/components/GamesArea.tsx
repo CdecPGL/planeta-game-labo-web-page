@@ -3,7 +3,7 @@ import { DateTime } from 'luxon';
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image';
-import 'twin.macro';
+import Heading from './Heading';
 
 const GamesArea: React.FC = () => {
   const data = useStaticQuery<GatsbyTypes.GamesAreaQuery>(graphql`
@@ -19,7 +19,7 @@ const GamesArea: React.FC = () => {
           catchPhrase
           screenShots {
             childImageSharp {
-              gatsbyImageData(width: 200, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+              gatsbyImageData(width: 480, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
@@ -29,13 +29,13 @@ const GamesArea: React.FC = () => {
 
   return (
     <>
-      <h2>ゲーム</h2>
-      <div tw='grid grid-cols-3 p-4 gap-4 items-stretch'>
+      <Heading>ゲーム</Heading>
+      <div className='grid grid-cols-3 p-4 gap-4 items-stretch'>
         {data.allGamesJson.nodes.map((g, i) => {
           const screenShotImage = getImage(g.screenShots![0] as ImageDataLike);
           return (
-            <div key={i} tw='rounded overflow-hidden shadow'>
-              <div tw='bg-red-400 text-sm text-gray-50 p-2'>
+            <div key={i} className='grid container rounded overflow-hidden shadow'>
+              <div className='grid item bg-red-400 text-sm text-gray-50 p-2'>
                 <p>
                   {DateTime.fromISO(g.updateDate ?? '1900-01-01').toFormat('yyyy/MM/dd更新')}(
                   {g.currentVersion})
@@ -44,24 +44,29 @@ const GamesArea: React.FC = () => {
                 <p>プラットフォーム:{g.platforms?.join('、') ?? '不明'}</p>
               </div>
 
-              <Link to={g.officialPageUrl ?? ''}>
-                <div tw='bg-white p-2'>
-                  <h1 tw='text-red-400 text-xl font-bold h-16'>{g.title}</h1>
-                  {screenShotImage == null ? (
-                    <>スクショなし</>
-                  ) : (
-                    <GatsbyImage
-                      image={screenShotImage}
-                      alt='ScreenShot'
-                      tw='w-full'
-                    ></GatsbyImage>
-                  )}
-                </div>
+              <div className='grid item container bg-white p-2'>
+                <Link to={g.officialPageUrl ?? ''}>
+                  <h1 className='grid item h-16 text-red-400 text-xl font-bold'>{g.title}</h1>
+                  <div className='grid item h-64'>
+                    {screenShotImage == null ? (
+                      <p>スクショなし</p>
+                    ) : (
+                      <GatsbyImage
+                        image={screenShotImage}
+                        alt='ScreenShot'
+                        className='w-full'
+                        objectFit='cover'
+                      ></GatsbyImage>
+                    )}
+                  </div>
+                </Link>
+              </div>
 
-                <div tw='bg-white/[.5] p-2'>
+              <div className='grid item bg-white/[.5] p-2'>
+                <Link to={g.officialPageUrl ?? ''}>
                   <p>{g.catchPhrase}</p>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </div>
           );
         })}
