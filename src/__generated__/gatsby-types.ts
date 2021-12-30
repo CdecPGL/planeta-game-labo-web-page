@@ -4782,14 +4782,6 @@ type NotificationAreaQuery = { readonly allFile: { readonly nodes: ReadonlyArray
         & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate'>> }
       )> }> } };
 
-type GamesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type GamesQuery = { readonly allGamesJson: { readonly nodes: ReadonlyArray<(
-      Pick<GamesJson, 'title' | 'genres' | 'platforms' | 'officialPageUrl' | 'updateDate' | 'currentVersion' | 'catchPhrase'>
-      & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>> }
-    )> } };
-
 type GamesAreaQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4798,19 +4790,6 @@ type GamesAreaQuery = { readonly allGamesJson: { readonly nodes: ReadonlyArray<(
       & { defaultPageUrl: GamesJson['gatsbyPath'] }
       & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>> }
     )> } };
-
-type GameQueryVariables = Exact<{
-  id: Maybe<Scalars['String']>;
-}>;
-
-
-type GameQuery = { readonly gamesJson: Maybe<(
-    Pick<GamesJson, 'title' | 'summary' | 'genres' | 'platforms' | 'officialPageUrl' | 'releaseDate' | 'updateDate' | 'currentVersion' | 'catchPhrase'>
-    & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>>, readonly stores: Maybe<ReadonlyArray<Maybe<(
-      Pick<GamesJsonStores, 'platform'>
-      & { readonly sites: Maybe<ReadonlyArray<Maybe<Pick<GamesJsonStoresSites, 'name' | 'url'>>>> }
-    )>>> }
-  )> };
 
 type PostQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
@@ -4851,6 +4830,19 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GameQueryVariables = Exact<{
+  id: Maybe<Scalars['String']>;
+}>;
+
+
+type GameQuery = { readonly gamesJson: Maybe<(
+    Pick<GamesJson, 'title' | 'summary' | 'genres' | 'platforms' | 'officialPageUrl' | 'releaseDate' | 'updateDate' | 'currentVersion' | 'catchPhrase'>
+    & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>>, readonly stores: Maybe<ReadonlyArray<Maybe<(
+      Pick<GamesJsonStores, 'platform'>
+      & { readonly sites: Maybe<ReadonlyArray<Maybe<Pick<GamesJsonStoresSites, 'name' | 'url'>>>> }
+    )>>> }
+  )> };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

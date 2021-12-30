@@ -1,9 +1,8 @@
-import { DateTime } from 'luxon';
 import React from 'react';
+import { DateTime } from 'luxon';
 import { useStaticQuery, graphql } from 'gatsby';
-import Heading from './Heading';
 
-const NotificationArea: React.FC = () => {
+const NotificationList: React.FC = () => {
   const data = useStaticQuery<GatsbyTypes.NotificationAreaQuery>(graphql`
     query NotificationArea {
       allFile(
@@ -27,7 +26,6 @@ const NotificationArea: React.FC = () => {
 
   return (
     <>
-      <Heading>お知らせ</Heading>
       {data.allFile.nodes.map((n, i) => (
         <dl key={i}>
           <dt>
@@ -41,7 +39,5 @@ const NotificationArea: React.FC = () => {
       ))}
     </>
   );
-
-  return <></>;
 };
-export default NotificationArea;
+export default NotificationList;

@@ -1,29 +1,14 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
+import Title from '../../components/Title';
+import GamesList from '../../components/GamesList';
 
-const Games: React.FC<{ data: GatsbyTypes.GamesQuery }> = ({ data }) => {
-  return <Layout>Games</Layout>;
+const Games: React.FC = () => {
+  return (
+    <Layout>
+      <Title>公開中のゲーム</Title>
+      <GamesList />
+    </Layout>
+  );
 };
 export default Games;
-
-export const query = graphql`
-  query Games {
-    allGamesJson(sort: { fields: updateDate, order: DESC }) {
-      nodes {
-        title
-        genres
-        platforms
-        officialPageUrl
-        updateDate
-        currentVersion
-        catchPhrase
-        screenShots {
-          childImageSharp {
-            gatsbyImageData(width: 200, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-      }
-    }
-  }
-`;

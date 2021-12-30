@@ -1,18 +1,22 @@
-import * as React from 'react';
-import GamesArea from '../components/GamesArea';
+import React from 'react';
+import GamesList from '../components/GamesList';
+import Heading from '../components/Heading';
+import Paragraph from '../components/Paragraph';
 import Layout from '../components/Layout';
-import NotificationArea from '../components/NotificationArea';
-import UpdatedContentsArea from '../components/UpdatedContentsArea';
+import NotificationList from '../components/NotificationList';
+import UpdatedContentsList from '../components/UpdatedContentsList';
 
-// markup
-const IndexPage = function () {
+const IndexPage: React.FC = function () {
   return (
     <Layout>
       <main>
-        <p>ここでは自作ゲームを公開しています。</p>
-        <NotificationArea />
-        <UpdatedContentsArea />
-        <GamesArea />
+        <Paragraph>ここでは自作ゲームを公開しています。</Paragraph>
+        <Heading>お知らせ</Heading>
+        <NotificationList />
+        <Heading>更新があったコンテンツ</Heading>
+        <UpdatedContentsList />
+        <Heading>ゲーム</Heading>
+        <GamesList />
       </main>
     </Layout>
   );

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 
 // styles
@@ -24,8 +24,7 @@ const codeStyles = {
   borderRadius: 4,
 };
 
-// markup
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <main style={pageStyles}>
       <title>Not found</title>

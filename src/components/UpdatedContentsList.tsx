@@ -1,15 +1,13 @@
 import React from 'react';
 import { DateTime } from 'luxon';
-import Heading from './Heading';
 
 const contents = [
   { link: '', title: 'C++バイナリデータの扱い方', modifiedDatetime: DateTime.utc(2016, 12, 9) },
 ] as const;
 
-const UpdatedContentsArea: React.FC = () => {
+const UpdatedContentsList: React.FC = () => {
   return (
     <>
-      <Heading>更新があったコンテンツ</Heading>
       {contents.map((c, i) => (
         <dl key={i}>
           <dt>
@@ -20,4 +18,4 @@ const UpdatedContentsArea: React.FC = () => {
     </>
   );
 };
-export default UpdatedContentsArea;
+export default UpdatedContentsList;
