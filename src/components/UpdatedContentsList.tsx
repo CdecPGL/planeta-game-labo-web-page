@@ -7,7 +7,7 @@ const contents = [
 
 const UpdatedContentsList: React.FC = () => {
   return (
-    <>
+    <div className='mb-6'>
       {contents.map((c, i) => (
         <dl key={i}>
           <dt>
@@ -15,7 +15,7 @@ const UpdatedContentsList: React.FC = () => {
           </dt>
         </dl>
       ))}
-    </>
+    </div>
   );
 };
 export default UpdatedContentsList;

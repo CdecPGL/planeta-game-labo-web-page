@@ -13,7 +13,7 @@ const IndexPage: React.FC = function () {
         <Paragraph>ここでは自作ゲームを公開しています。</Paragraph>
         <Heading>お知らせ</Heading>
         <NotificationList />
-        <Heading>更新があったコンテンツ</Heading>
+        <Heading>更新があった記事</Heading>
         <UpdatedContentsList />
         <Heading>ゲーム</Heading>
         <GamesList />

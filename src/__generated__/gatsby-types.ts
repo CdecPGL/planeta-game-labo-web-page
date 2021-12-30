@@ -4779,6 +4779,7 @@ type NotificationAreaQueryVariables = Exact<{ [key: string]: never; }>;
 
 type NotificationAreaQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
         Pick<MarkdownRemark, 'excerpt'>
+        & { link: MarkdownRemark['gatsbyPath'] }
         & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate'>> }
       )> }> } };
 
