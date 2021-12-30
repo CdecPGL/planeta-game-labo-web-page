@@ -21,7 +21,9 @@ const NotificationList: React.FC = () => {
               createDate
             }
             excerpt
-            link: gatsbyPath(filePath: "/{MarkdownRemark.parent__(File)__sourceInstanceName}/{MarkdownRemark.parent__(File)__name}")
+            link: gatsbyPath(
+              filePath: "/{MarkdownRemark.parent__(File)__sourceInstanceName}/{MarkdownRemark.parent__(File)__name}"
+            )
           }
         }
       }
@@ -47,6 +49,9 @@ const NotificationList: React.FC = () => {
           )}
         </dl>
       ))}
+      <Link to='/notifications' className='mt-4'>
+        過去のお知らせを見る
+      </Link>
     </div>
   );
 };

@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
 
-type HeaderProps = {
-  sideComponent?: React.ReactNode;
-};
-
-const Header: React.FC<HeaderProps> = ({ sideComponent }) => {
+const Header: React.FC = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   function menuOpenHandler() {
@@ -37,34 +34,36 @@ const Header: React.FC<HeaderProps> = ({ sideComponent }) => {
         </div>
 
         <div className='flex flex-1 flex-wrap items-center justify-center lg:justify-start max-w-full lg:flex-nowrap lg:max-w-screen-lg'>
-          <div className='flex items-center flex-shrink-0 mr-6'>
-            <StaticImage
-              className='h-8 w-64 mr-2'
-              src='../images/blog_logo_origin.png'
-              alt='Logo'
-            />
-          </div>
+          <Link to='/'>
+            <div className='flex items-center flex-shrink-0 mr-6'>
+              <StaticImage
+                className='h-8 w-64 mr-2'
+                src='../images/blog_logo_origin.png'
+                alt='Logo'
+              />
+            </div>
+          </Link>
           <div
             className={
               'text-center font-bold items-center transition flex-grow w-full fixed top-16 bg-white transpa rounded-xl origin-top text-lg divide-y-2 lg:flex lg:w-auto lg:static lg:bg-transparent lg:rounded-none lg:text-sm lg:divide-y-0 lg:space-x-4' +
               (isMenuOpened ? ' scale-y-100' : ' scale-y-0 lg:scale-y-100')
             }
           >
-            <a href='#responsive-header' className='block py-4 lg:inline-block hover:text-white'>
+            <Link to='/games' className='block py-4 lg:inline-block hover:text-white'>
               ゲーム
-            </a>
-            <a href='#responsive-header' className='block py-4 lg:inline-block hover:text-white'>
+            </Link>
+            <Link to='/articles' className='block py-4 lg:inline-block hover:text-white'>
               記事
-            </a>
-            <a href='#responsive-header' className='block py-4 lg:inline-block hover:text-white '>
+            </Link>
+            <Link to='/others' className='block py-4 lg:inline-block hover:text-white '>
               その他
-            </a>
-            <a href='#responsive-header' className='block py-4 lg:inline-block hover:text-white'>
+            </Link>
+            <Link to='/relativePages' className='block py-4 lg:inline-block hover:text-white'>
               関連サイト
-            </a>
-            <a href='#responsive-header' className='block py-4 lg:inline-block hover:text-white'>
+            </Link>
+            <Link to='contact' className='block py-4 lg:inline-block hover:text-white'>
               コンタクト
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
