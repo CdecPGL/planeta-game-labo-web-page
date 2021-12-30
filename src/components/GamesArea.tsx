@@ -22,6 +22,7 @@ const GamesArea: React.FC = () => {
               gatsbyImageData(width: 480, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
+          defaultPageUrl: gatsbyPath(filePath: "/games/{GamesJSON.parent__(File)__name}")
         }
       }
     }
@@ -45,7 +46,7 @@ const GamesArea: React.FC = () => {
               </div>
 
               <div className='grid item container bg-white p-2'>
-                <Link to={g.officialPageUrl ?? ''}>
+                <Link to={g.officialPageUrl ?? g.defaultPageUrl ?? ''}>
                   <h1 className='grid item h-16 text-red-400 text-xl font-bold'>{g.title}</h1>
                   <div className='grid item h-64'>
                     {screenShotImage == null ? (
@@ -56,14 +57,14 @@ const GamesArea: React.FC = () => {
                         alt='ScreenShot'
                         className='w-full'
                         objectFit='cover'
-                      ></GatsbyImage>
+                      />
                     )}
                   </div>
                 </Link>
               </div>
 
               <div className='grid item bg-white/[.5] p-2'>
-                <Link to={g.officialPageUrl ?? ''}>
+                <Link to={g.officialPageUrl ?? g.defaultPageUrl ?? ''}>
                   <p>{g.catchPhrase}</p>
                 </Link>
               </div>
