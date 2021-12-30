@@ -83,7 +83,7 @@ function processNode(node: Node, id: string) {
 
   if (node.tagName === 'a') {
     return (
-      <Link to={node.properties.href}>
+      <Link key={id} to={node.properties.href}>
         {node.children.map((c, i) => processNode(c, `${id}-${i}`))}
       </Link>
     );

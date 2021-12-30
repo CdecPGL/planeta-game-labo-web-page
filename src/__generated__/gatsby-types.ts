@@ -4841,7 +4841,11 @@ type PostsQueryVariables = Exact<{
 }>;
 
 
-type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<{ readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }> }> } };
+type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
+        Pick<MarkdownRemark, 'excerpt'>
+        & { link: MarkdownRemark['gatsbyPath'] }
+        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
+      )> }> } };
 
 type PostQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
