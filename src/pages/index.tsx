@@ -4,7 +4,7 @@ import Heading from '../components/Heading';
 import Paragraph from '../components/Paragraph';
 import Layout from '../components/Layout';
 import NotificationList from '../components/NotificationList';
-import UpdatedContentsList from '../components/UpdatedContentsList';
+// import UpdatedContentsList from '../components/UpdatedContentsList';
 
 const IndexPage: React.FC = function () {
   return (
@@ -13,8 +13,8 @@ const IndexPage: React.FC = function () {
         <Paragraph>ここでは自作ゲームを公開しています。</Paragraph>
         <Heading>お知らせ</Heading>
         <NotificationList />
-        <Heading>更新があった記事</Heading>
-        <UpdatedContentsList />
+        {/* <Heading>更新があった記事</Heading>
+        <UpdatedContentsList /> */}
         <Heading>ゲーム</Heading>
         <GamesList />
       </main>

@@ -1,0 +1,9 @@
+#id_canvas1 {
+ z-index: 1;
+}
+.input_area{
+    width:640px;
+}
+#transition_func_tb{
+    height:100px;
+}

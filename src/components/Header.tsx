@@ -52,16 +52,16 @@ const Header: React.FC = () => {
             <Link to='/games' className='block py-4 lg:inline-block hover:text-white'>
               ゲーム
             </Link>
-            <Link to='/articles' className='block py-4 lg:inline-block hover:text-white'>
+            {/* <Link to='/articles' className='block py-4 lg:inline-block hover:text-white'>
               記事
-            </Link>
+            </Link> */}
             <Link to='/others' className='block py-4 lg:inline-block hover:text-white '>
               その他
             </Link>
-            <Link to='/relativePages' className='block py-4 lg:inline-block hover:text-white'>
+            <Link to='/relatedsites' className='block py-4 lg:inline-block hover:text-white'>
               関連サイト
             </Link>
-            <Link to='contact' className='block py-4 lg:inline-block hover:text-white'>
+            <Link to='/contact' className='block py-4 lg:inline-block hover:text-white'>
               コンタクト
             </Link>
           </div>

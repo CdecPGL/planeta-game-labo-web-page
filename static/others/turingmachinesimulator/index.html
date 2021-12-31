@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta charset="UTF-8">
+    <title>チューリングマシンシミュレータv1.0</title>
+    <script type="text/javascript">
+        if(!window.location.href.endsWith('/')){
+            window.location.href = window.location.href + '/';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="pc.css">
+    <script type="text/javascript" src="graphics.js"></script>
+</head>
+<body>
+<a href="../../index.html">プラネタゲームラボ</a><br />
+<br />
+    チューリングマシンシミュレータv1.0
+    <form id="config_form">
+        <fieldset>
+            <legend>設定</legend>
+            <label id="status_txt" for="status_tb">状態(0で開始、finで終了)</label><br>
+            <input type="text" id="status_tb" class="input_area" value="0,fin,0,1,0d,1d,2d"><br>
+            <label id="symbol_txt" for="symbol_tb">記号(B,0,1は必須)</label><br>
+            <input type="text" id="symbol_tb" class="input_area" value="B,0,1"><br>
+            <label id="transition_func_txt" for="transition_func_tb">遷移関数。カンマ区切りで複数入力(状態,テープ記号,移動する状態,書き込む記号,動作R||L||N)</label><br>
+            <textarea id="transition_func_tb" class="input_area">(0,0,1,1,R),(0,1,0d,1,R),(1,0,1,0,N),(1,1,1,1,N),(1,B,fin,B,L),(0d,0,0d,0,R),(0d,1,0d,1,R),(0d,B,1d,B,L),(1d,0,2d,1,L),(1d,1,1d,0,L),(1d,B,fin,1,N),(2d,0,2d,0,L),(2d,1,2d,1,L),(2d,B,fin,B,R)</textarea><br>
+            <label id="input_txt" for="input_tb">入力</label><br>
+            <input type="text" id="input_tb" class="input_area" value="10111"><br>
+            <button type="button" id="set_btn" onclick="SetTuringMachine()">設定</button><br>
+        </fieldset>
+    </form>
+    <form id="control_form">
+        <fieldset>
+            <legend>コントロール</legend>
+            <label for="anim_ckb">アニメーションの有無</label>
+            <input type="checkbox" id="anim_ckb" onclick="SetAnimFlag(this.checked)"><br>
+            <label for="spd_rng">動作速度</label>
+            <input type="range" id="spd_rng" min="70" max="100" step="1" value="90" onchange="SetSpeed(this.value)"><br>
+            入力:
+            <label id="input"></label><br>
+            出力:
+            <label id="output"></label><br>
+            <button type="button" id="start_btn" onclick="Start()">計算開始</button>
+            <button type="button" id="stop_btn" onclick="Stop()">停止</button>
+            <button type="button" id="reset_btn" onclick="Reset()">リセット</button>
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript">
+        Init();
+    </script>
+    <noscript>javascriptに対応したブラウザで閲覧するか、javascriptを有効にしてください。</noscript>
+</body>
+</html>

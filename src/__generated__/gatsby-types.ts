@@ -4774,6 +4774,16 @@ type GamesJsonSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type PostQueryVariables = Exact<{
+  id: Maybe<Scalars['String']>;
+}>;
+
+
+type PostQuery = { readonly markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'htmlAst'>
+    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
+  )> };
+
 type GamesAreaQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4805,10 +4815,16 @@ type GameQuery = { readonly gamesJson: Maybe<(
     )>>> }
   )> };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type PostsQueryVariables = Exact<{
+  sin: Maybe<Scalars['String']>;
+}>;
 
 
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
+        Pick<MarkdownRemark, 'excerpt'>
+        & { link: MarkdownRemark['gatsbyPath'] }
+        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
+      )> }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -4836,25 +4852,9 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type PostsQueryVariables = Exact<{
-  sin: Maybe<Scalars['String']>;
-}>;
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
-        Pick<MarkdownRemark, 'excerpt'>
-        & { link: MarkdownRemark['gatsbyPath'] }
-        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
-      )> }> } };
-
-type PostQueryVariables = Exact<{
-  id: Maybe<Scalars['String']>;
-}>;
-
-
-type PostQuery = { readonly markdownRemark: Maybe<(
-    Pick<MarkdownRemark, 'htmlAst'>
-    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
-  )> };
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 }
