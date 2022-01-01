@@ -5,7 +5,7 @@ import SideBar from './SideBar';
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div className='font-body bg-gradient-to-b from-blue-600 to-sky-200'>
+    <div className='font-body bg-gradient-to-b from-indigo-400 to-sky-200'>
       <Header />
       <div className='flex justify-center'>
         <div className='flex flex-1 flex-wrap max-w-full lg:flex-nowrap lg:max-w-screen-lg'>

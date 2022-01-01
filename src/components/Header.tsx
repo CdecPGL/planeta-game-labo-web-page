@@ -49,19 +49,19 @@ const Header: React.FC = () => {
               (isMenuOpened ? ' scale-y-100' : ' scale-y-0 lg:scale-y-100')
             }
           >
-            <Link to='/games' className='block py-4 lg:inline-block hover:text-white'>
+            <Link to='/games' className='text-standard-color block py-4 lg:inline-block'>
               ゲーム
             </Link>
-            {/* <Link to='/articles' className='block py-4 lg:inline-block hover:text-white'>
+            {/* <Link to='/articles' className='text-standard-color block py-4 lg:inline-block'>
               記事
             </Link> */}
-            <Link to='/others' className='block py-4 lg:inline-block hover:text-white '>
+            <Link to='/others' className='text-standard-color block py-4 lg:inline-block '>
               その他
             </Link>
-            <Link to='/relatedsites' className='block py-4 lg:inline-block hover:text-white'>
+            <Link to='/relatedsites' className='text-standard-color block py-4 lg:inline-block'>
               関連サイト
             </Link>
-            <Link to='/contact' className='block py-4 lg:inline-block hover:text-white'>
+            <Link to='/contact' className='text-standard-color block py-4 lg:inline-block'>
               コンタクト
             </Link>
           </div>

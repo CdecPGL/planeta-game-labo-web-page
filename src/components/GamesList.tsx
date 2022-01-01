@@ -28,7 +28,7 @@ const GamesList: React.FC = () => {
   `);
 
   return (
-    <div className='grid grid-cols-3 p-4 gap-4 items-stretch'>
+    <div className='grid grid-col-1 p-4 items-stretch lg:grid-cols-3 lg:gap-4'>
       {data.allGamesJson.nodes.map((g, i) => {
         return (
           <GameCard

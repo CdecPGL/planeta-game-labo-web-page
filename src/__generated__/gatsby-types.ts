@@ -4774,16 +4774,6 @@ type GamesJsonSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type PostQueryVariables = Exact<{
-  id: Maybe<Scalars['String']>;
-}>;
-
-
-type PostQuery = { readonly markdownRemark: Maybe<(
-    Pick<MarkdownRemark, 'htmlAst'>
-    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
-  )> };
-
 type GamesAreaQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4815,16 +4805,15 @@ type GameQuery = { readonly gamesJson: Maybe<(
     )>>> }
   )> };
 
-type PostsQueryVariables = Exact<{
-  sin: Maybe<Scalars['String']>;
+type PostQueryVariables = Exact<{
+  id: Maybe<Scalars['String']>;
 }>;
 
 
-type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
-        Pick<MarkdownRemark, 'excerpt'>
-        & { link: MarkdownRemark['gatsbyPath'] }
-        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
-      )> }> } };
+type PostQuery = { readonly markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'htmlAst'>
+    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
+  )> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -4851,6 +4840,17 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type PostsQueryVariables = Exact<{
+  sin: Maybe<Scalars['String']>;
+}>;
+
+
+type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
+        Pick<MarkdownRemark, 'excerpt'>
+        & { link: MarkdownRemark['gatsbyPath'] }
+        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
+      )> }> } };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

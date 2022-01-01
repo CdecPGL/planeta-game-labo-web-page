@@ -2,3 +2,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-sky-200;
+  }
+
+  body {
+    @apply text-standard-color;
+  }
+
+  body a {
+    @apply text-link-color;
+  }
+
+  body a:active,a:focus,a:hover {
+    @apply text-selected-link-color;
+  }
+}
+
+@layer utilities {
+    .text-standard-color {
+        @apply text-zinc-900;
+    }
+
+    .text-link-color {
+        @apply text-sky-700;
+    }
+
+    .text-selected-link-color {
+        @apply text-sky-900;
+    }
+}

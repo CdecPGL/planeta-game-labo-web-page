@@ -36,7 +36,7 @@ const GameCard: React.FC<GameCardProps> = ({
         <p>プラットフォーム:{platforms.join('、')}</p>
       </div>
 
-      <div className='grid item container bg-white p-2'>
+      <div className='grid item container bg-white p-2 hover:bg-slate-300'>
         <Link to={officialPageUrl}>
           <h1 className='grid item h-16 text-red-400 text-xl font-bold'>{title}</h1>
           <div className='grid item h-64'>
@@ -54,10 +54,8 @@ const GameCard: React.FC<GameCardProps> = ({
         </Link>
       </div>
 
-      <div className='grid item bg-white/[.5] p-2'>
-        <Link to={officialPageUrl}>
-          <p>{catchPhrase}</p>
-        </Link>
+      <div className='grid item bg-white/[.5] p-2 text-slate-900'>
+        <p>{catchPhrase}</p>
       </div>
     </div>
   );
