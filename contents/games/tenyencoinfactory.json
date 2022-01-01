@@ -1,0 +1,34 @@
+{
+  "title": "10円玉工場で働こう！",
+  "summary": [
+    "Unity 1Week GameJamで出したゲーム。",
+    "10円玉工場の作業員として、ベルトコンベアに乗って流れてくる10円玉の不良品を選別するゲームです。",
+    "10円玉を一つ出荷するごとにあなたの給料が1円上がります。",
+    "選別に失敗すると工場が爆破されてしまうので、ミスには気を付けながら高給を目指しましょう。"
+  ],
+  "genres": ["シミュレーション"],
+  "tags": [],
+  "platforms": ["ブラウザ"],
+  "officialPageUrl": null,
+  "releaseDate": "2018-11-25",
+  "updateDate": "2018-11-26",
+  "currentVersion": "v2.0.1",
+  "catchPhrase": "10円玉工場の作業員としてベルトコンベアに乗って流れてくる10円玉の不良品を選別する虚無なゲーム",
+  "recommendationLevel": 0,
+  "screenShots": [
+    "./tenyencoinfactory/10yen_coin_factory_ss_0.jpg",
+    "./tenyencoinfactory/10yen_coin_factory_ss_1.jpg",
+    "./tenyencoinfactory/10yen_coin_factory_ss_2.jpg"
+  ],
+  "stores": [
+    {
+      "platform": "ブラウザ",
+      "sites": [
+        {
+          "name": "UnityRoom",
+          "url": "https://unityroom.com/games/10yencoinfactory"
+        }
+      ]
+    }
+  ]
+}

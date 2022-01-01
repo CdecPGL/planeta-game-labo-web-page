@@ -1,6 +1,5 @@
 {
   "title": "WirePlanet",
-  "explanation": "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム「WirePlanet」の紹介ページです。",
   "summary": [
     "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム。",
     "初めて完成させたゲームです。"
@@ -14,6 +13,7 @@
   "currentVersion": "v1.1.1",
   "catchPhrase": "線でできた世界で、迫ってくる敵から惑星を守るシンプルなシューティングゲーム",
   "screenShots": ["./wireplanet/wp_title_sc.png", "./wireplanet/wp_sample_sc.png"],
+  "recommendationLevel": 3,
   "stores": [
     {
       "platform": "Windows",

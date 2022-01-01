@@ -7,7 +7,7 @@ import GameCard from './GameCard';
 const GamesList: React.FC = () => {
   const data = useStaticQuery<GatsbyTypes.GamesAreaQuery>(graphql`
     query GamesArea {
-      allGamesJson(sort: { fields: updateDate, order: DESC }) {
+      allGamesJson(sort: { fields: [recommendationLevel, updateDate], order: [DESC, DESC] }) {
         nodes {
           title
           genres
