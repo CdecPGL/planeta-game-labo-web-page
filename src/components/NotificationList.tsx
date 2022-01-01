@@ -49,9 +49,9 @@ const NotificationList: React.FC = () => {
           )}
         </dl>
       ))}
-      <Link to='/notifications' className='mt-4'>
-        過去のお知らせを見る
-      </Link>
+      <div className='mt-4'>
+        <Link to='/notifications'>過去のお知らせを見る</Link>
+      </div>
     </div>
   );
 };
