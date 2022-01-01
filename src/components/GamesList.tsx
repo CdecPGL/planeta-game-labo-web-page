@@ -38,7 +38,11 @@ const GamesList: React.FC = () => {
             currentVersion={g.currentVersion ?? 'バージョン不明'}
             genres={g.genres?.filter((g): g is string => g != null) ?? []}
             platforms={g.platforms?.filter((g): g is string => g != null) ?? []}
-            officialPageUrl={g.officialPageUrl ?? g.defaultPageUrl ?? ''}
+            officialPageUrl={
+              g.officialPageUrl == null || g.officialPageUrl === ''
+                ? g.defaultPageUrl ?? ''
+                : g.officialPageUrl
+            }
             titleScreenShot={g.screenShots![0] as ImageDataLike}
             catchPhrase={g.catchPhrase ?? ''}
           />
