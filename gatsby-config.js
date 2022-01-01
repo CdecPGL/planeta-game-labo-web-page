@@ -33,20 +33,6 @@ module.exports = {
         path: './contents/notifications/',
       }
     },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'articles',
-    //     path: './contents/articles/',
-    //   }
-    // },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'others',
-    //     path: './contents/others/',
-    //   }
-    // },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-plugin-typegen',
