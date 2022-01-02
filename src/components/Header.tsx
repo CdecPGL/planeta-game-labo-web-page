@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 type HeaderProps = {
@@ -9,9 +9,20 @@ type HeaderProps = {
 };
 
 const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription }) => {
+  const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
+    query Header {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
-  const title = pageTitle == null ? 'プラネタゲームラボ' : `プラネタゲームラボ ${pageTitle}`;
+  const metaDataTitle = data?.site?.siteMetadata?.title ?? 'タイトル不明';
+  const title = pageTitle == null ? metaDataTitle : `${metaDataTitle} ${pageTitle}`;
   const description = pageDescription == null ? 'Cdecの自作ゲーム置き場' : pageDescription;
 
   function menuOpenHandler() {
@@ -50,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription }) => {
             <div className='flex items-center flex-shrink-0 mr-6'>
               <StaticImage
                 className='h-8 w-64 mr-2'
-                src='../images/blog_logo_origin.png'
+                src='../images/logo.png'
                 alt='Logo'
               />
             </div>

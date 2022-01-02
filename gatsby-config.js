@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://planetagamelabo.com',
+    title: 'プラネタゲームラボ',
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-google-analytics',
