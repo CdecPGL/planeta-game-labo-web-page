@@ -24,7 +24,6 @@ const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription }) => {
         <meta charSet='utf-8' />
         <html lang='ja' />
         <title>{title}</title>
-        <link rel='icon' href='/favicon.ico' />
         <meta name='description' content={description} />
       </Helmet>
 
