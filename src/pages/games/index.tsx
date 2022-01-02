@@ -5,7 +5,7 @@ import GamesList from '../../components/GamesList';
 
 const Games: React.FC = () => {
   return (
-    <Layout>
+    <Layout pageTitle='公開中のゲーム' pageDescription='公開中のゲーム一覧'>
       <Title>公開中のゲーム</Title>
       <GamesList />
     </Layout>

@@ -8,7 +8,7 @@ import Paragraph from '../components/Paragraph';
 
 const RelatedSites: React.FC = () => {
   return (
-    <Layout>
+    <Layout pageTitle='関連サイト' pageDescription='関連サイト一覧'>
       <Title>関連サイト</Title>
       <Heading>自分のサイト</Heading>
       <Link to='https://cdecrement.blog.fc2.com/'>

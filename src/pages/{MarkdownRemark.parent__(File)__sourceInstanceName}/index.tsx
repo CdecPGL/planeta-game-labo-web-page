@@ -19,9 +19,10 @@ const Posts: React.FC<{
   data: GatsbyTypes.PostsQuery;
   params: { parent__sourceInstanceName: string };
 }> = ({ data, params }) => {
+  const title = getTitle(params.parent__sourceInstanceName);
   return (
-    <Layout>
-      <Title>{getTitle(params.parent__sourceInstanceName)}</Title>
+    <Layout pageTitle={title} pageDescription={title}>
+      <Title>{title}</Title>
       <div className='mb-12 bg-slate-50'>
         {data?.allFile?.nodes?.map((n) => {
           const createDateText = DateTime.fromISO(

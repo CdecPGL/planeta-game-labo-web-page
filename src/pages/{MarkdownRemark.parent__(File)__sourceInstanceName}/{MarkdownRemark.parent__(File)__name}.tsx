@@ -105,9 +105,10 @@ const Post: React.FC<{ data: GatsbyTypes.PostQuery }> = ({ data }) => {
     createDateText === updateDateText
       ? `${createDateText}作成`
       : `${createDateText}作成（${updateDateText}）更新`;
+  const pageDescription = `${data?.markdownRemark?.frontmatter?.title}の詳細ページ`;
 
   return (
-    <Layout>
+    <Layout pageTitle={data?.markdownRemark?.frontmatter?.title} pageDescription={pageDescription}>
       <Title>{data?.markdownRemark?.frontmatter?.title}</Title>
       <p className='text-sm text-center mb-8'>{timeStamp}</p>
       {htmlAst.children.map((c, i) => processNode(c, `${i}`))}

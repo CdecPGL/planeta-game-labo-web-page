@@ -285,7 +285,6 @@ type Site_buildTimeArgs = {
 type SiteSiteMetadata = {
   readonly title: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
-  readonly siteUrl: Maybe<Scalars['String']>;
 };
 
 type SiteFunction = Node & {
@@ -778,7 +777,6 @@ type GamesJson = Node & {
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
   readonly title: Maybe<Scalars['String']>;
-  readonly explanation: Maybe<Scalars['String']>;
   readonly summary: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly genres: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly platforms: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
@@ -789,6 +787,7 @@ type GamesJson = Node & {
   readonly currentVersion: Maybe<Scalars['String']>;
   readonly catchPhrase: Maybe<Scalars['String']>;
   readonly screenShots: Maybe<ReadonlyArray<Maybe<File>>>;
+  readonly recommendationLevel: Maybe<Scalars['Int']>;
   readonly stores: Maybe<ReadonlyArray<Maybe<GamesJsonStores>>>;
   readonly gatsbyPath: Maybe<Scalars['String']>;
 };
@@ -1147,7 +1146,6 @@ type Query_gamesJsonArgs = {
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
   title: Maybe<StringQueryOperatorInput>;
-  explanation: Maybe<StringQueryOperatorInput>;
   summary: Maybe<StringQueryOperatorInput>;
   genres: Maybe<StringQueryOperatorInput>;
   platforms: Maybe<StringQueryOperatorInput>;
@@ -1158,6 +1156,7 @@ type Query_gamesJsonArgs = {
   currentVersion: Maybe<StringQueryOperatorInput>;
   catchPhrase: Maybe<StringQueryOperatorInput>;
   screenShots: Maybe<FileFilterListInput>;
+  recommendationLevel: Maybe<IntQueryOperatorInput>;
   stores: Maybe<GamesJsonStoresFilterListInput>;
   gatsbyPath: Maybe<StringQueryOperatorInput>;
 };
@@ -1364,7 +1363,6 @@ type GamesJsonFilterInput = {
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
-  readonly explanation: Maybe<StringQueryOperatorInput>;
   readonly summary: Maybe<StringQueryOperatorInput>;
   readonly genres: Maybe<StringQueryOperatorInput>;
   readonly platforms: Maybe<StringQueryOperatorInput>;
@@ -1375,6 +1373,7 @@ type GamesJsonFilterInput = {
   readonly currentVersion: Maybe<StringQueryOperatorInput>;
   readonly catchPhrase: Maybe<StringQueryOperatorInput>;
   readonly screenShots: Maybe<FileFilterListInput>;
+  readonly recommendationLevel: Maybe<IntQueryOperatorInput>;
   readonly stores: Maybe<GamesJsonStoresFilterListInput>;
   readonly gatsbyPath: Maybe<StringQueryOperatorInput>;
 };
@@ -1834,7 +1833,6 @@ type FileFieldsEnum =
   | 'childrenGamesJson.internal.owner'
   | 'childrenGamesJson.internal.type'
   | 'childrenGamesJson.title'
-  | 'childrenGamesJson.explanation'
   | 'childrenGamesJson.summary'
   | 'childrenGamesJson.genres'
   | 'childrenGamesJson.platforms'
@@ -1915,7 +1913,6 @@ type FileFieldsEnum =
   | 'childrenGamesJson.screenShots.childrenGamesJson.id'
   | 'childrenGamesJson.screenShots.childrenGamesJson.children'
   | 'childrenGamesJson.screenShots.childrenGamesJson.title'
-  | 'childrenGamesJson.screenShots.childrenGamesJson.explanation'
   | 'childrenGamesJson.screenShots.childrenGamesJson.summary'
   | 'childrenGamesJson.screenShots.childrenGamesJson.genres'
   | 'childrenGamesJson.screenShots.childrenGamesJson.platforms'
@@ -1926,12 +1923,12 @@ type FileFieldsEnum =
   | 'childrenGamesJson.screenShots.childrenGamesJson.currentVersion'
   | 'childrenGamesJson.screenShots.childrenGamesJson.catchPhrase'
   | 'childrenGamesJson.screenShots.childrenGamesJson.screenShots'
+  | 'childrenGamesJson.screenShots.childrenGamesJson.recommendationLevel'
   | 'childrenGamesJson.screenShots.childrenGamesJson.stores'
   | 'childrenGamesJson.screenShots.childrenGamesJson.gatsbyPath'
   | 'childrenGamesJson.screenShots.childGamesJson.id'
   | 'childrenGamesJson.screenShots.childGamesJson.children'
   | 'childrenGamesJson.screenShots.childGamesJson.title'
-  | 'childrenGamesJson.screenShots.childGamesJson.explanation'
   | 'childrenGamesJson.screenShots.childGamesJson.summary'
   | 'childrenGamesJson.screenShots.childGamesJson.genres'
   | 'childrenGamesJson.screenShots.childGamesJson.platforms'
@@ -1942,6 +1939,7 @@ type FileFieldsEnum =
   | 'childrenGamesJson.screenShots.childGamesJson.currentVersion'
   | 'childrenGamesJson.screenShots.childGamesJson.catchPhrase'
   | 'childrenGamesJson.screenShots.childGamesJson.screenShots'
+  | 'childrenGamesJson.screenShots.childGamesJson.recommendationLevel'
   | 'childrenGamesJson.screenShots.childGamesJson.stores'
   | 'childrenGamesJson.screenShots.childGamesJson.gatsbyPath'
   | 'childrenGamesJson.screenShots.id'
@@ -1958,6 +1956,7 @@ type FileFieldsEnum =
   | 'childrenGamesJson.screenShots.internal.mediaType'
   | 'childrenGamesJson.screenShots.internal.owner'
   | 'childrenGamesJson.screenShots.internal.type'
+  | 'childrenGamesJson.recommendationLevel'
   | 'childrenGamesJson.stores'
   | 'childrenGamesJson.stores.platform'
   | 'childrenGamesJson.stores.sites'
@@ -2003,7 +2002,6 @@ type FileFieldsEnum =
   | 'childGamesJson.internal.owner'
   | 'childGamesJson.internal.type'
   | 'childGamesJson.title'
-  | 'childGamesJson.explanation'
   | 'childGamesJson.summary'
   | 'childGamesJson.genres'
   | 'childGamesJson.platforms'
@@ -2084,7 +2082,6 @@ type FileFieldsEnum =
   | 'childGamesJson.screenShots.childrenGamesJson.id'
   | 'childGamesJson.screenShots.childrenGamesJson.children'
   | 'childGamesJson.screenShots.childrenGamesJson.title'
-  | 'childGamesJson.screenShots.childrenGamesJson.explanation'
   | 'childGamesJson.screenShots.childrenGamesJson.summary'
   | 'childGamesJson.screenShots.childrenGamesJson.genres'
   | 'childGamesJson.screenShots.childrenGamesJson.platforms'
@@ -2095,12 +2092,12 @@ type FileFieldsEnum =
   | 'childGamesJson.screenShots.childrenGamesJson.currentVersion'
   | 'childGamesJson.screenShots.childrenGamesJson.catchPhrase'
   | 'childGamesJson.screenShots.childrenGamesJson.screenShots'
+  | 'childGamesJson.screenShots.childrenGamesJson.recommendationLevel'
   | 'childGamesJson.screenShots.childrenGamesJson.stores'
   | 'childGamesJson.screenShots.childrenGamesJson.gatsbyPath'
   | 'childGamesJson.screenShots.childGamesJson.id'
   | 'childGamesJson.screenShots.childGamesJson.children'
   | 'childGamesJson.screenShots.childGamesJson.title'
-  | 'childGamesJson.screenShots.childGamesJson.explanation'
   | 'childGamesJson.screenShots.childGamesJson.summary'
   | 'childGamesJson.screenShots.childGamesJson.genres'
   | 'childGamesJson.screenShots.childGamesJson.platforms'
@@ -2111,6 +2108,7 @@ type FileFieldsEnum =
   | 'childGamesJson.screenShots.childGamesJson.currentVersion'
   | 'childGamesJson.screenShots.childGamesJson.catchPhrase'
   | 'childGamesJson.screenShots.childGamesJson.screenShots'
+  | 'childGamesJson.screenShots.childGamesJson.recommendationLevel'
   | 'childGamesJson.screenShots.childGamesJson.stores'
   | 'childGamesJson.screenShots.childGamesJson.gatsbyPath'
   | 'childGamesJson.screenShots.id'
@@ -2127,6 +2125,7 @@ type FileFieldsEnum =
   | 'childGamesJson.screenShots.internal.mediaType'
   | 'childGamesJson.screenShots.internal.owner'
   | 'childGamesJson.screenShots.internal.type'
+  | 'childGamesJson.recommendationLevel'
   | 'childGamesJson.stores'
   | 'childGamesJson.stores.platform'
   | 'childGamesJson.stores.sites'
@@ -2521,7 +2520,6 @@ type DirectorySortInput = {
 type SiteSiteMetadataFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
-  readonly siteUrl: Maybe<StringQueryOperatorInput>;
 };
 
 type SiteConnection = {
@@ -2573,7 +2571,6 @@ type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata.title'
   | 'siteMetadata.description'
-  | 'siteMetadata.siteUrl'
   | 'port'
   | 'host'
   | 'polyfill'
@@ -4339,7 +4336,6 @@ type GamesJsonFieldsEnum =
   | 'internal.owner'
   | 'internal.type'
   | 'title'
-  | 'explanation'
   | 'summary'
   | 'genres'
   | 'platforms'
@@ -4560,7 +4556,6 @@ type GamesJsonFieldsEnum =
   | 'screenShots.childrenGamesJson.internal.owner'
   | 'screenShots.childrenGamesJson.internal.type'
   | 'screenShots.childrenGamesJson.title'
-  | 'screenShots.childrenGamesJson.explanation'
   | 'screenShots.childrenGamesJson.summary'
   | 'screenShots.childrenGamesJson.genres'
   | 'screenShots.childrenGamesJson.platforms'
@@ -4610,6 +4605,7 @@ type GamesJsonFieldsEnum =
   | 'screenShots.childrenGamesJson.screenShots.childrenGamesJson'
   | 'screenShots.childrenGamesJson.screenShots.id'
   | 'screenShots.childrenGamesJson.screenShots.children'
+  | 'screenShots.childrenGamesJson.recommendationLevel'
   | 'screenShots.childrenGamesJson.stores'
   | 'screenShots.childrenGamesJson.stores.platform'
   | 'screenShots.childrenGamesJson.stores.sites'
@@ -4629,7 +4625,6 @@ type GamesJsonFieldsEnum =
   | 'screenShots.childGamesJson.internal.owner'
   | 'screenShots.childGamesJson.internal.type'
   | 'screenShots.childGamesJson.title'
-  | 'screenShots.childGamesJson.explanation'
   | 'screenShots.childGamesJson.summary'
   | 'screenShots.childGamesJson.genres'
   | 'screenShots.childGamesJson.platforms'
@@ -4679,6 +4674,7 @@ type GamesJsonFieldsEnum =
   | 'screenShots.childGamesJson.screenShots.childrenGamesJson'
   | 'screenShots.childGamesJson.screenShots.id'
   | 'screenShots.childGamesJson.screenShots.children'
+  | 'screenShots.childGamesJson.recommendationLevel'
   | 'screenShots.childGamesJson.stores'
   | 'screenShots.childGamesJson.stores.platform'
   | 'screenShots.childGamesJson.stores.sites'
@@ -4721,6 +4717,7 @@ type GamesJsonFieldsEnum =
   | 'screenShots.internal.mediaType'
   | 'screenShots.internal.owner'
   | 'screenShots.internal.type'
+  | 'recommendationLevel'
   | 'stores'
   | 'stores.platform'
   | 'stores.sites'
@@ -4774,15 +4771,6 @@ type GamesJsonSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type GamesAreaQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type GamesAreaQuery = { readonly allGamesJson: { readonly nodes: ReadonlyArray<(
-      Pick<GamesJson, 'title' | 'genres' | 'platforms' | 'officialPageUrl' | 'updateDate' | 'currentVersion' | 'catchPhrase'>
-      & { defaultPageUrl: GamesJson['gatsbyPath'] }
-      & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>> }
-    )> } };
-
 type NotificationAreaQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4804,6 +4792,15 @@ type GameQuery = { readonly gamesJson: Maybe<(
       & { readonly sites: Maybe<ReadonlyArray<Maybe<Pick<GamesJsonStoresSites, 'name' | 'url'>>>> }
     )>>> }
   )> };
+
+type GamesAreaQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type GamesAreaQuery = { readonly allGamesJson: { readonly nodes: ReadonlyArray<(
+      Pick<GamesJson, 'title' | 'genres' | 'platforms' | 'officialPageUrl' | 'updateDate' | 'currentVersion' | 'catchPhrase'>
+      & { defaultPageUrl: GamesJson['gatsbyPath'] }
+      & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>> }
+    )> } };
 
 type PostQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;

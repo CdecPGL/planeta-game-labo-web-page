@@ -43,8 +43,9 @@ const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
   }
 
   const titleImage = getImage(game.screenShots![0] as ImageDataLike);
+  const pageDescription = `${game.title}の説明ページ`;
   return (
-    <Layout>
+    <Layout pageTitle={game.title} pageDescription={pageDescription}>
       <Title>{game.title}</Title>
       <Heading>概要</Heading>
       <Paragraph>

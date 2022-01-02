@@ -9,15 +9,13 @@ import NotificationList from '../components/NotificationList';
 const IndexPage: React.FC = function () {
   return (
     <Layout>
-      <main>
-        <Paragraph>ここでは自作ゲームを公開しています。</Paragraph>
-        <Heading>お知らせ</Heading>
-        <NotificationList />
-        {/* <Heading>更新があった記事</Heading>
+      <Paragraph>ここでは自作ゲームを公開しています。</Paragraph>
+      <Heading>お知らせ</Heading>
+      <NotificationList />
+      {/* <Heading>更新があった記事</Heading>
         <UpdatedContentsList /> */}
-        <Heading>ゲーム</Heading>
-        <GamesList />
-      </main>
+      <Heading>ゲーム</Heading>
+      <GamesList />
     </Layout>
   );
 };

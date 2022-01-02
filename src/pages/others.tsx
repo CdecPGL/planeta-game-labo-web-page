@@ -7,7 +7,7 @@ import Paragraph from '../components/Paragraph';
 
 const Others: React.FC = () => {
   return (
-    <Layout>
+    <Layout pageTitle='その他コンテンツ' pageDescription='ゲーム以外のコンテンツ一覧'>
       <Title>その他コンテンツ</Title>
       <Link to='/others/turingmachinesimulator'>
         <Heading>チューリングマシンシミュレーター</Heading>

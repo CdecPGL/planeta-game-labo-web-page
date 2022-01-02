@@ -8,7 +8,7 @@ import Paragraph from '../components/Paragraph';
 
 const Contact: React.FC = () => {
   return (
-    <Layout>
+    <Layout pageTitle='コンタクト' pageDescription='連絡先一覧'>
       <Title>コンタクト</Title>
       <Heading>メール</Heading>
       <Paragraph>

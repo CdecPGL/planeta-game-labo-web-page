@@ -20,4 +20,9 @@ exports.createPages = ({ actions }) => {
         toPath: "/others/turingmachinesimulator/",
         isPermanent: true,
     });
+    createRedirect({
+        fromPath: "/WirePlanet",
+        toPath: "/wireplanet/",
+        isPermanent: true,
+    });
 }
