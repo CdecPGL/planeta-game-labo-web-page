@@ -28,7 +28,7 @@ const GameCard: React.FC<GameCardProps> = ({
 
   return (
     <div className='grid container rounded-xl overflow-hidden shadow'>
-      <div className='grid item bg-red-400 text-xs text-gray-50 p-2'>
+      <div className='grid item bg-indigo-500 text-xs text-gray-50 p-2'>
         <p>
           {updateDate.toFormat('yyyy/MM/dd更新')}({currentVersion})
         </p>
@@ -38,7 +38,7 @@ const GameCard: React.FC<GameCardProps> = ({
 
       <div className='grid item container bg-white p-2 hover:bg-slate-300'>
         <Link to={officialPageUrl}>
-          <h1 className='grid item h-16 text-red-400 text-lg font-bold'>{title}</h1>
+          <h1 className='grid item h-16 text-indigo-500 text-lg font-bold'>{title}</h1>
           <div className='grid item h-auto'>
             {titleScreenShotImage == null ? (
               <p>スクショなし</p>

@@ -263,6 +263,8 @@ type Directory_ctimeArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly port: Maybe<Scalars['Int']>;
+  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly jsxRuntime: Maybe<Scalars['String']>;
@@ -954,6 +956,8 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  port: Maybe<IntQueryOperatorInput>;
+  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   jsxRuntime: Maybe<StringQueryOperatorInput>;
@@ -2570,6 +2574,8 @@ type SiteFieldsEnum =
   | 'siteMetadata.title'
   | 'siteMetadata.description'
   | 'siteMetadata.siteUrl'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -2704,6 +2710,8 @@ type SiteGroupConnection_groupArgs = {
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  readonly port: Maybe<IntQueryOperatorInput>;
+  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly jsxRuntime: Maybe<StringQueryOperatorInput>;
@@ -4766,45 +4774,6 @@ type GamesJsonSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type GamesAreaQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type GamesAreaQuery = { readonly allGamesJson: { readonly nodes: ReadonlyArray<(
-      Pick<GamesJson, 'title' | 'genres' | 'platforms' | 'officialPageUrl' | 'updateDate' | 'currentVersion' | 'catchPhrase'>
-      & { defaultPageUrl: GamesJson['gatsbyPath'] }
-      & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>> }
-    )> } };
-
-type NotificationAreaQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NotificationAreaQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
-        Pick<MarkdownRemark, 'excerpt'>
-        & { link: MarkdownRemark['gatsbyPath'] }
-        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate'>> }
-      )> }> } };
-
-type PostQueryVariables = Exact<{
-  id: Maybe<Scalars['String']>;
-}>;
-
-
-type PostQuery = { readonly markdownRemark: Maybe<(
-    Pick<MarkdownRemark, 'htmlAst'>
-    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
-  )> };
-
-type PostsQueryVariables = Exact<{
-  sin: Maybe<Scalars['String']>;
-}>;
-
-
-type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
-        Pick<MarkdownRemark, 'excerpt'>
-        & { link: MarkdownRemark['gatsbyPath'] }
-        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
-      )> }> } };
-
 type GameQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
 }>;
@@ -4816,6 +4785,34 @@ type GameQuery = { readonly gamesJson: Maybe<(
       Pick<GamesJsonStores, 'platform'>
       & { readonly sites: Maybe<ReadonlyArray<Maybe<Pick<GamesJsonStoresSites, 'name' | 'url'>>>> }
     )>>> }
+  )> };
+
+type NotificationAreaQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NotificationAreaQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
+        Pick<MarkdownRemark, 'excerpt'>
+        & { link: MarkdownRemark['gatsbyPath'] }
+        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate'>> }
+      )> }> } };
+
+type GamesAreaQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type GamesAreaQuery = { readonly allGamesJson: { readonly nodes: ReadonlyArray<(
+      Pick<GamesJson, 'title' | 'genres' | 'platforms' | 'officialPageUrl' | 'updateDate' | 'currentVersion' | 'catchPhrase'>
+      & { defaultPageUrl: GamesJson['gatsbyPath'] }
+      & { readonly screenShots: Maybe<ReadonlyArray<Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>>> }
+    )> } };
+
+type PostQueryVariables = Exact<{
+  id: Maybe<Scalars['String']>;
+}>;
+
+
+type PostQuery = { readonly markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'htmlAst'>
+    & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
   )> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -4843,6 +4840,22 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type PostsQueryVariables = Exact<{
+  sin: Maybe<Scalars['String']>;
+}>;
+
+
+type PostsQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly childMarkdownRemark: Maybe<(
+        Pick<MarkdownRemark, 'excerpt'>
+        & { link: MarkdownRemark['gatsbyPath'] }
+        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'createDate' | 'updateDate'>> }
+      )> }> } };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
 

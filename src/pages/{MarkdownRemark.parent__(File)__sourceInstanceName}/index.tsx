@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import Title from '../../components/Title';
-import Heading from '../../components/Heading';
-import Paragraph from '../../components/Paragraph';
+import ItemList from '../../components/ItemList';
 import { DateTime } from 'luxon';
 
 function getTitle(sourceInstanceName: string) {
@@ -20,32 +19,30 @@ const Posts: React.FC<{
   params: { parent__sourceInstanceName: string };
 }> = ({ data, params }) => {
   const title = getTitle(params.parent__sourceInstanceName);
+  const items = data?.allFile?.nodes?.map((n) => {
+    const createDateText = DateTime.fromISO(
+      n?.childMarkdownRemark?.frontmatter?.createDate ?? '1900-01-01',
+    ).toFormat('yyyy/MM/dd');
+    const updateDateText = DateTime.fromISO(
+      n?.childMarkdownRemark?.frontmatter?.updateDate ?? '1900-01-01',
+    ).toFormat('yyyy/MM/dd');
+    const timeStamp =
+      createDateText === updateDateText
+        ? `${createDateText}作成`
+        : `${createDateText}作成（${updateDateText}）更新`;
+    return {
+      meta: timeStamp,
+      title: n?.childMarkdownRemark?.frontmatter?.title ?? 'タイトル不明',
+      link: n?.childMarkdownRemark?.link ?? undefined,
+      contents:
+        n?.childMarkdownRemark?.excerpt == null ? undefined : [n?.childMarkdownRemark?.excerpt],
+    };
+  });
+
   return (
     <Layout pageTitle={title} pageDescription={title}>
       <Title>{title}</Title>
-      <div className='mb-12 bg-slate-50'>
-        {data?.allFile?.nodes?.map((n) => {
-          const createDateText = DateTime.fromISO(
-            n?.childMarkdownRemark?.frontmatter?.createDate ?? '1900-01-01',
-          ).toFormat('yyyy/MM/dd');
-          const updateDateText = DateTime.fromISO(
-            n?.childMarkdownRemark?.frontmatter?.updateDate ?? '1900-01-01',
-          ).toFormat('yyyy/MM/dd');
-          const timeStamp =
-            createDateText === updateDateText
-              ? `${createDateText}作成`
-              : `${createDateText}作成（${updateDateText}）更新`;
-          return (
-            <div className='p-5'>
-              <p className='text-sm mb-1'>{timeStamp}</p>
-              <Link to={n?.childMarkdownRemark?.link ?? ''}>
-                <Heading>{n?.childMarkdownRemark?.frontmatter?.title}</Heading>
-              </Link>
-              <Paragraph>{n?.childMarkdownRemark?.excerpt}</Paragraph>
-            </div>
-          );
-        })}
-      </div>
+      <ItemList items={items} />
     </Layout>
   );
 };

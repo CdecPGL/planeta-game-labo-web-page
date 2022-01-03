@@ -1,18 +1,22 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
-import Heading from '../components/Heading';
-import Paragraph from '../components/Paragraph';
+import ItemList from '../components/ItemList';
 
 const Others: React.FC = () => {
   return (
     <Layout pageTitle='その他コンテンツ' pageDescription='ゲーム以外のコンテンツ一覧'>
       <Title>その他コンテンツ</Title>
-      <Link to='/others/turingmachinesimulator'>
-        <Heading>チューリングマシンシミュレーター</Heading>
-      </Link>
-      <Paragraph>チューリングマシンを定義してその動きを観察できるツール。</Paragraph>
+      <ItemList
+        items={[
+          {
+            meta: 'ツール',
+            title: 'チューリングマシンシミュレーター',
+            link: '/others/turingmachinesimulator',
+            contents: ['チューリングマシンを定義してその動きを観察できるツール。'],
+          },
+        ]}
+      />
     </Layout>
   );
 };

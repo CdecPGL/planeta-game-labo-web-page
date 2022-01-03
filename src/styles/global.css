@@ -5,7 +5,7 @@
 
 @layer base {
   html {
-    @apply bg-sky-200;
+    @apply bg-black;
   }
 
   body {
@@ -23,14 +23,14 @@
 
 @layer utilities {
     .text-standard-color {
-        @apply text-zinc-900;
+        @apply text-slate-200;
     }
 
     .text-link-color {
-        @apply text-sky-700;
+        @apply text-sky-300;
     }
 
     .text-selected-link-color {
-        @apply text-sky-900;
+        @apply text-sky-600;
     }
 }
