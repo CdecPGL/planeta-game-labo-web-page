@@ -12,7 +12,7 @@ const NotificationList: React.FC = () => {
           childMarkdownRemark: { id: { ne: null } }
         }
         sort: { order: DESC, fields: childrenMarkdownRemark___frontmatter___updateDate }
-        limit: 5
+        limit: 3
       ) {
         nodes {
           childMarkdownRemark {
