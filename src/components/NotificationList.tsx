@@ -50,7 +50,7 @@ const NotificationList: React.FC = () => {
         </dl>
       ))}
       <div className='mt-4'>
-        <Link to='/notifications'>過去のお知らせを見る</Link>
+        <Link to='/notifications'>{'> 過去のお知らせを見る'}</Link>
       </div>
     </div>
   );

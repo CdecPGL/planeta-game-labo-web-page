@@ -44,6 +44,24 @@ const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
 
   const titleImage = getImage(game.screenShots![0] as ImageDataLike);
   const pageDescription = `${game.title}の説明ページ`;
+  const isDeveloping = game.isDeveloping ?? false;
+
+  const releaseInfos = isDeveloping
+    ? [
+        `状況: ${game.releaseSchedule ?? '開発中'}`,
+        `公開予定日: ${
+          game.releaseDate != null
+            ? DateTime.fromISO(game.releaseDate).toFormat('yyyy/MM/dd')
+            : '詳細未定'
+        }`,
+      ]
+    : [
+        `公開日: ${DateTime.fromISO(game.releaseDate ?? '1900-01-01').toFormat('yyyy/MM/dd')}`,
+        `更新日: ${DateTime.fromISO(game.updateDate ?? '1900-01-01').toFormat('yyyy/MM/dd')} (${
+          game.currentVersion
+        })`,
+      ];
+
   return (
     <Layout pageTitle={game.title} pageDescription={pageDescription}>
       <Title>{game.title}</Title>
@@ -58,11 +76,9 @@ const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
       </Paragraph>
 
       <UnorderedList>
-        <li>公開: {DateTime.fromISO(game.releaseDate ?? '1900-01-01').toFormat('yyyy/MM/dd')}</li>
-        <li>
-          最終更新: {DateTime.fromISO(game.updateDate ?? '1900-01-01').toFormat('yyyy/MM/dd')} (
-          {game.currentVersion})
-        </li>
+        {releaseInfos.map((info) => (
+          <li>{info}</li>
+        ))}
         <li>ジャンル: {game.genres?.join('、') ?? '不明'}</li>
         <li>対応プラットフォーム: {game.platforms?.join('、') ?? '不明'}</li>
         <li>ダウンロード: {getStoreLink(game)}</li>
@@ -122,6 +138,8 @@ export const query = graphql`
       updateDate
       currentVersion
       catchPhrase
+      isDeveloping
+      releaseSchedule
       screenShots {
         childImageSharp {
           gatsbyImageData(width: 480, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

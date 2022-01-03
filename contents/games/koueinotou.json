@@ -1,0 +1,30 @@
+{
+  "title": "光影の塔",
+  "summary": [
+    "オンライン対戦3Dシューティングゲーム。",
+    "二チームに分かれ、占拠したタワーの多さで競うゲームです。",
+    "ステージに散らばるパワーアップアップアイテムや武器を取ることで試合を有利に進められます。"
+  ],
+  "genres": ["3Dシューティング", "オンライン対戦"],
+  "tags": [],
+  "platforms": ["Windows", "MacOS X"],
+  "officialPageUrl": null,
+  "releaseDate": null,
+  "updateDate": null,
+  "currentVersion": null,
+  "catchPhrase": "光の中を駆け巡る！　爽快感満載のオンライン対戦型3Dシューティングゲーム",
+  "screenShots": ["./koueinotou/sst.jpg", "./koueinotou/ss1.jpg", "./koueinotou/ss2.jpg"],
+  "recommendationLevel": 3,
+  "stores": [
+    {
+      "platform": "PC",
+      "sites": [
+        {
+          "name": "Steam（準備中）"
+        }
+      ]
+    }
+  ],
+  "isDeveloping": true,
+  "releaseSchedule": "2022年8月公開予定"
+}
