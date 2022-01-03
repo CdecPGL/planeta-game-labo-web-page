@@ -41,9 +41,9 @@ const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription, className =
 
       <nav className='flex justify-center w-full mb-9 py-4 border-b-2'>
         {/* スマホでのメニューボタン */}
-        <div className='fixed right-4 lg:hidden'>
+        <div className='fixed right-4 lg:hidden z-50'>
           <button
-            className='flex items-center px-3 py-2 border rounded bg-white bg-opacity-60 border-black hover:text-white hover:border-white'
+            className='flex items-center px-3 py-2 border rounded bg-gray-600 bg-opacity-70 border-black hover:text-white hover:border-white'
             onClick={menuOpenHandler}
           >
             <svg
@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription, className =
           </Link>
           <div
             className={
-              'text-center font-bold items-center transition flex-grow w-full fixed top-16 bg-white transpa rounded-xl origin-top text-lg divide-y-2 lg:flex lg:w-auto lg:static lg:bg-transparent lg:rounded-none lg:text-sm lg:divide-y-0 lg:space-x-4' +
+              'text-center font-bold items-center transition flex-grow w-full fixed top-16 z-50 bg-black border border-white rounded-xl origin-top text-lg divide-y-2 lg:flex lg:w-auto lg:static lg:bg-transparent lg:rounded-none lg:border-none lg:text-sm lg:divide-y-0 lg:space-x-4' +
               (isMenuOpened ? ' scale-y-100' : ' scale-y-0 lg:scale-y-100')
             }
           >

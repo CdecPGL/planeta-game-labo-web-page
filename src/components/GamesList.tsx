@@ -54,7 +54,7 @@ type GamesListProps = {
 
 const GamesList: React.FC<GamesListProps> = ({ games }) => {
   return (
-    <div className='grid grid-col-1 p-4 items-stretch lg:grid-cols-3 lg:gap-4'>
+    <div className='grid grid-col-1 items-stretch gap-4 py-4 lg:grid-cols-3'>
       {games.map((g, i) => {
         return <GameCard key={i} {...g} />;
       })}
