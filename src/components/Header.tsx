@@ -6,9 +6,10 @@ import { Helmet } from 'react-helmet';
 type HeaderProps = {
   pageTitle?: string;
   pageDescription?: string;
+  className?: string;
 };
 
-const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription }) => {
+const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription, className = '' }) => {
   const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
     query Header {
       site {
@@ -30,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription }) => {
   }
 
   return (
-    <header>
+    <header className={className}>
       <Helmet>
         <meta charSet='utf-8' />
         <html lang='ja' />
@@ -59,11 +60,7 @@ const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription }) => {
         <div className='flex flex-1 flex-wrap items-center justify-center lg:justify-start max-w-full lg:flex-nowrap lg:max-w-screen-lg'>
           <Link to='/'>
             <div className='flex items-center flex-shrink-0 mr-6'>
-              <StaticImage
-                className='h-8 w-64 mr-2'
-                src='../images/logo.png'
-                alt='Logo'
-              />
+              <StaticImage className='h-8 w-64 mr-2' src='../images/logo.png' alt='Logo' />
             </div>
           </Link>
           <div

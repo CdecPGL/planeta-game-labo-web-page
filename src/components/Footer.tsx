@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  className?: string;
+};
+
+const Footer: React.FC<FooterProps> = ({ className = '' }) => {
   return (
-    <footer className='text-center text-base py-2 mt-6 border-t-2'>
+    <footer className={`text-center text-base py-2 mt-6 border-t-2 w-full ${className}`}>
       © プラネタゲームラボ {new Date().getFullYear()}
     </footer>
   );
