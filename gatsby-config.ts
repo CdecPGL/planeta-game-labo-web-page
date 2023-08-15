@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from 'gatsby';
+
+const config: GatsbyConfig = {
   graphqlTypegen: true,
   siteMetadata: {
     siteUrl: 'https://planetagamelabo.com',
@@ -42,3 +44,5 @@ module.exports = {
     'gatsby-plugin-postcss',
   ],
 };
+
+export default config;

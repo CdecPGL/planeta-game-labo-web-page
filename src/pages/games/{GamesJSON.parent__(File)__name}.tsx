@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, HeadFC, Link } from 'gatsby';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
 import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image';
@@ -126,7 +126,7 @@ const Game: React.FC<{ data: Queries.GameQuery }> = ({ data }) => {
 };
 export default Game;
 
-export const Head: React.FC<{ data: Queries.GameQuery }> = ({ data }) => {
+export const Head: HeadFC<Queries.GameQuery> = ({ data }) => {
   const game = data?.gamesJson;
   if (game == null) {
     throw new Error('Game is null.');

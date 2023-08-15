@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Title from '../components/Title';
 import ItemList from '../components/ItemList';
 import HeadContent from '../components/HeadContent';
+import { HeadFC } from 'gatsby';
 
 const Others: React.FC = () => {
   return (
@@ -23,6 +24,6 @@ const Others: React.FC = () => {
 };
 export default Others;
 
-export const Head = () => (
+export const Head: HeadFC = () => (
   <HeadContent pageTitle='その他コンテンツ' pageDescription='ゲーム以外のコンテンツ一覧' />
 );

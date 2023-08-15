@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, HeadFC } from 'gatsby';
 import Layout from '../../components/Layout';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
@@ -117,7 +117,7 @@ const Post: React.FC<{ data:Queries.PostQuery }> = ({ data }) => {
 };
 export default Post;
 
-export const Head: React.FC<{ data: Queries.PostQuery }> = ({ data }) => {
+export const Head: HeadFC<Queries.PostQuery> = ({ data }) => {
   const pageDescription = `${data?.markdownRemark?.frontmatter?.title}の詳細ページ`;
   return (
     <HeadContent

@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { HeadFC, graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import Title from '../../components/Title';
 import GamesList, { getGameCardPropsFromGameJsonQueryResult } from '../../components/GamesList';
@@ -17,7 +17,7 @@ const Games: React.FC<{ data: Queries.GamesQuery }> = ({ data }) => {
 };
 export default Games;
 
-export const Head = () => (
+export const Head: HeadFC = () => (
   <HeadContent pageTitle='ゲーム一覧' pageDescription='公開中のゲーム一覧' />
 );
 

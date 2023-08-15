@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Title from '../components/Title';
 import ItemList from '../components/ItemList';
 import HeadContent from '../components/HeadContent';
+import { HeadFC } from 'gatsby';
 
 const RelatedSites: React.FC = () => {
   return (
@@ -41,4 +42,6 @@ const RelatedSites: React.FC = () => {
 };
 export default RelatedSites;
 
-export const Head = () => <HeadContent pageTitle='関連サイト' pageDescription='関連サイト一覧' />;
+export const Head: HeadFC = () => (
+  <HeadContent pageTitle='関連サイト' pageDescription='関連サイト一覧' />
+);

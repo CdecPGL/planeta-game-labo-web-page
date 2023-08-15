@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, HeadFC } from 'gatsby';
 import Layout from '../../components/Layout';
 import Title from '../../components/Title';
 import ItemList from '../../components/ItemList';
@@ -49,9 +49,7 @@ const Posts: React.FC<{
 };
 export default Posts;
 
-export const Head: React.FC<{
-  params: { parent__sourceInstanceName: string };
-}> = ({ params }) => {
+export const Head: HeadFC = ({ params }) => {
   const title = getTitle(params.parent__sourceInstanceName);
   return <HeadContent pageTitle={title} pageDescription={title} />;
 };

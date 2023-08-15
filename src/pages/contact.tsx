@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Title from '../components/Title';
 import ItemList from '../components/ItemList';
 import HeadContent from '../components/HeadContent';
+import { HeadFC } from 'gatsby';
 
 const Contact: React.FC = () => {
   return (
@@ -29,6 +30,8 @@ const Contact: React.FC = () => {
   );
 };
 
-export const Head = () => <HeadContent pageTitle='コンタクト' pageDescription='連絡先一覧' />;
+export const Head: HeadFC = () => (
+  <HeadContent pageTitle='コンタクト' pageDescription='連絡先一覧' />
+);
 
 export default Contact;

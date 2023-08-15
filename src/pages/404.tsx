@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { HeadFC, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import Paragraph from '../components/Paragraph';
@@ -20,6 +20,6 @@ const NotFoundPage: React.FC = () => {
 
 export default NotFoundPage;
 
-export const Head = () => (
+export const Head: HeadFC = () => (
   <HeadContent pageTitle='ページが見つかりません' pageDescription='ページが見つかりません' />
 );
