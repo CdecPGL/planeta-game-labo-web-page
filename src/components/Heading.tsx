@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Heading: React.FC = ({ children }) => {
+type HeadingProps = {
+  children?: React.ReactNode;
+};
+
+const Heading: React.FC<HeadingProps> = ({ children }) => {
   return (
     <div className='flex text-2xl font-bold px-2 pb-2 mb-2 border-solid border-b-2 border-gray-300'>
       <svg width='2rem' height='2rem' viewBox='0 0 100 100' className='mr-2'>

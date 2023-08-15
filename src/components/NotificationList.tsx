@@ -11,7 +11,7 @@ const NotificationList: React.FC = () => {
           sourceInstanceName: { eq: "notifications" }
           childMarkdownRemark: { id: { ne: null } }
         }
-        sort: { order: DESC, fields: childrenMarkdownRemark___frontmatter___updateDate }
+        sort: { childrenMarkdownRemark: { frontmatter: { updateDate: DESC } } }
         limit: 3
       ) {
         nodes {

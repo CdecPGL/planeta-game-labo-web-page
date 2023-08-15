@@ -24,7 +24,7 @@ export const Head = () => (
 // 更新日時が新しい順
 export const query = graphql`
   query Games {
-    allGamesJson(sort: { fields: [updateDate], order: [DESC, DESC] }) {
+    allGamesJson(sort: { updateDate: DESC }) {
       nodes {
         title
         genres

@@ -3,9 +3,11 @@ import Footer from './Footer';
 import Header from './Header';
 import SideBar from './SideBar';
 
-type LayoutProp = {};
+type LayoutProps = {
+  children?: React.ReactNode;
+};
 
-const Layout: React.FC<LayoutProp> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className='flex flex-col font-body bg-gradient-to-b from-black to-black min-h-screen'>
       <Header className='flex-none' />

@@ -40,7 +40,7 @@ export const query = graphql`
   query Index {
     recommendedGames: allGamesJson(
       filter: { isDeveloping: { ne: true } }
-      sort: { fields: [recommendationLevel, updateDate], order: [DESC, DESC] }
+      sort: [{ recommendationLevel: DESC }, { updateDate: DESC }]
       limit: 3
     ) {
       nodes {
@@ -61,7 +61,7 @@ export const query = graphql`
     }
     developingGames: allGamesJson(
       filter: { isDeveloping: { eq: true } }
-      sort: { fields: [recommendationLevel, releaseDate], order: [DESC, ASC] }
+      sort: [{ recommendationLevel: DESC }, { releaseDate: ASC }]
     ) {
       nodes {
         title

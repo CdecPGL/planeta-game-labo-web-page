@@ -60,7 +60,7 @@ export const query = graphql`
   query Posts($sin: String) {
     allFile(
       filter: { sourceInstanceName: { eq: $sin }, childMarkdownRemark: { id: { ne: null } } }
-      sort: { order: DESC, fields: childrenMarkdownRemark___frontmatter___updateDate }
+      sort: { childrenMarkdownRemark: { frontmatter: { updateDate: DESC } } }
     ) {
       nodes {
         childMarkdownRemark {
