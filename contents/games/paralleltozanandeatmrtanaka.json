@@ -1,0 +1,33 @@
+{
+  "title": "登山と栄養摂取を同時にこなす田中さん",
+  "summary": [
+    "UGDGで2023年8月11日に開催されたお盆ワンデイゲームジャム「登る」で出したゲーム。",
+    "サラリーマンの田中さんがその辺に落ちている食料を摂取しながら登山するゲームです。",
+    "空腹になったり障害物にぶつかると死んでしまうので、障害物をよけ食料を摂取しながらより高い標高を目指しましょう。"
+  ],
+  "genres": ["アクション"],
+  "tags": [],
+  "platforms": ["ブラウザ"],
+  "officialPageUrl": null,
+  "releaseDate": "2023-08-12",
+  "updateDate": "2023-08-12",
+  "currentVersion": "v1.0.0",
+  "catchPhrase": "サラリーマンの田中さんがその辺に落ちている食料を摂取しながら登山する虚無なゲームです。",
+  "recommendationLevel": 0,
+  "screenShots": [
+    "./paralleltozanandeatmrtanaka/ss_0.jpg",
+    "./paralleltozanandeatmrtanaka/ss_1.jpg",
+    "./paralleltozanandeatmrtanaka/ss_2.jpg"
+  ],
+  "stores": [
+    {
+      "platform": "ブラウザ",
+      "sites": [
+        {
+          "name": "UnityRoom",
+          "url": "https://unityroom.com/games/parallel-tozan-and-eat-mr-tanaka"
+        }
+      ]
+    }
+  ]
+}
