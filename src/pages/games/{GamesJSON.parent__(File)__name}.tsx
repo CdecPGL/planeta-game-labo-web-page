@@ -7,6 +7,7 @@ import { DateTime } from 'luxon';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import UnorderedList from '../../components/UnorderedList';
+import HeadContent from '../../components/HeadContent';
 
 function getStoreLink(gameData: GatsbyTypes.GameQuery['gamesJson']) {
   if (gameData == null || gameData.stores == null) {
@@ -43,7 +44,6 @@ const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
   }
 
   const titleImage = getImage(game.screenShots![0] as ImageDataLike);
-  const pageDescription = `${game.title}の説明ページ`;
   const isDeveloping = game.isDeveloping ?? false;
 
   const releaseInfos = isDeveloping
@@ -63,7 +63,7 @@ const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
       ];
 
   return (
-    <Layout pageTitle={game.title} pageDescription={pageDescription}>
+    <Layout>
       <Title>{game.title}</Title>
       <Heading>概要</Heading>
       <Paragraph>
@@ -125,6 +125,16 @@ const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
   );
 };
 export default Game;
+
+export const Head: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
+  const game = data?.gamesJson;
+  if (game == null) {
+    throw new Error('Game is null.');
+  }
+
+  const pageDescription = `${game.title}の説明ページ`;
+  return <HeadContent pageTitle={game.title} pageDescription={pageDescription} />;
+};
 
 export const query = graphql`
   query Game($id: String) {

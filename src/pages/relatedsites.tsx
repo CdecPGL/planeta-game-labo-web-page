@@ -2,10 +2,11 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import ItemList from '../components/ItemList';
+import HeadContent from '../components/HeadContent';
 
 const RelatedSites: React.FC = () => {
   return (
-    <Layout pageTitle='関連サイト' pageDescription='関連サイト一覧'>
+    <Layout>
       <Title>関連サイト</Title>
       <ItemList
         items={[
@@ -39,3 +40,5 @@ const RelatedSites: React.FC = () => {
   );
 };
 export default RelatedSites;
+
+export const Head = () => <HeadContent pageTitle='関連サイト' pageDescription='関連サイト一覧' />;

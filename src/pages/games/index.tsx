@@ -3,18 +3,23 @@ import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import Title from '../../components/Title';
 import GamesList, { getGameCardPropsFromGameJsonQueryResult } from '../../components/GamesList';
+import HeadContent from '../../components/HeadContent';
 
 const Games: React.FC<{ data: GatsbyTypes.GamesQuery }> = ({ data }) => {
   const games = data?.allGamesJson?.nodes?.map(getGameCardPropsFromGameJsonQueryResult);
 
   return (
-    <Layout pageTitle='ゲーム一覧' pageDescription='公開中のゲーム一覧'>
+    <Layout>
       <Title>ゲーム一覧</Title>
       <GamesList games={games} />
     </Layout>
   );
 };
 export default Games;
+
+export const Head = () => (
+  <HeadContent pageTitle='ゲーム一覧' pageDescription='公開中のゲーム一覧' />
+);
 
 // 更新日時が新しい順
 export const query = graphql`

@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import Title from '../../components/Title';
 import ItemList from '../../components/ItemList';
 import { DateTime } from 'luxon';
+import HeadContent from '../../components/HeadContent';
 
 function getTitle(sourceInstanceName: string) {
   switch (sourceInstanceName) {
@@ -40,13 +41,20 @@ const Posts: React.FC<{
   });
 
   return (
-    <Layout pageTitle={title} pageDescription={title}>
+    <Layout>
       <Title>{title}</Title>
       <ItemList items={items} />
     </Layout>
   );
 };
 export default Posts;
+
+export const Head: React.FC<{
+  params: { parent__sourceInstanceName: string };
+}> = ({ params }) => {
+  const title = getTitle(params.parent__sourceInstanceName);
+  return <HeadContent pageTitle={title} pageDescription={title} />;
+};
 
 export const query = graphql`
   query Posts($sin: String) {

@@ -2,10 +2,11 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import ItemList from '../components/ItemList';
+import HeadContent from '../components/HeadContent';
 
 const Contact: React.FC = () => {
   return (
-    <Layout pageTitle='コンタクト' pageDescription='連絡先一覧'>
+    <Layout>
       <Title>コンタクト</Title>
       <ItemList
         items={[
@@ -27,4 +28,7 @@ const Contact: React.FC = () => {
     </Layout>
   );
 };
+
+export const Head = () => <HeadContent pageTitle='コンタクト' pageDescription='連絡先一覧' />;
+
 export default Contact;

@@ -3,10 +3,11 @@ import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import Paragraph from '../components/Paragraph';
+import HeadContent from '../components/HeadContent';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <Layout pageTitle='ページが見つかりません' pageDescription='ページが見つかりません'>
+    <Layout>
       <Title>ページが見つかりません</Title>
       <Paragraph>
         お探しのページが見つかりませんでした。
@@ -18,3 +19,7 @@ const NotFoundPage: React.FC = () => {
 };
 
 export default NotFoundPage;
+
+export const Head = () => (
+  <HeadContent pageTitle='ページが見つかりません' pageDescription='ページが見つかりません' />
+);

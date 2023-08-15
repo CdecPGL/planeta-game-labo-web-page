@@ -1,30 +1,13 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
 
 type HeaderProps = {
-  pageTitle?: string;
-  pageDescription?: string;
   className?: string;
 };
 
-const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription, className = '' }) => {
-  const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
-    query Header {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-
-  const metaDataTitle = data?.site?.siteMetadata?.title ?? 'タイトル不明';
-  const title = pageTitle == null ? metaDataTitle : `${metaDataTitle} ${pageTitle}`;
-  const description = pageDescription == null ? 'Cdecの自作ゲーム置き場' : pageDescription;
 
   function menuOpenHandler() {
     setIsMenuOpened(!isMenuOpened);
@@ -32,13 +15,6 @@ const Header: React.FC<HeaderProps> = ({ pageTitle, pageDescription, className =
 
   return (
     <header className={className}>
-      <Helmet>
-        <meta charSet='utf-8' />
-        <html lang='ja' />
-        <title>{title}</title>
-        <meta name='description' content={description} />
-      </Helmet>
-
       <nav className='flex justify-center w-full mb-9 py-4 border-b-2'>
         {/* スマホでのメニューボタン */}
         <div className='fixed right-4 lg:hidden z-50'>

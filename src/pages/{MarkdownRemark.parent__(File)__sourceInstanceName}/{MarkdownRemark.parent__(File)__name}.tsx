@@ -6,6 +6,7 @@ import Paragraph from '../../components/Paragraph';
 import Heading from '../../components/Heading';
 import SubHeading from '../../components/SubHeading';
 import { DateTime } from 'luxon';
+import HeadContent from '../../components/HeadContent';
 
 interface Text {
   type: 'text';
@@ -105,10 +106,9 @@ const Post: React.FC<{ data: GatsbyTypes.PostQuery }> = ({ data }) => {
     createDateText === updateDateText
       ? `${createDateText}作成`
       : `${createDateText}作成（${updateDateText}）更新`;
-  const pageDescription = `${data?.markdownRemark?.frontmatter?.title}の詳細ページ`;
 
   return (
-    <Layout pageTitle={data?.markdownRemark?.frontmatter?.title} pageDescription={pageDescription}>
+    <Layout>
       <Title>{data?.markdownRemark?.frontmatter?.title}</Title>
       <p className='text-sm text-center mb-8'>{timeStamp}</p>
       {htmlAst.children.map((c, i) => processNode(c, `${i}`))}
@@ -116,6 +116,16 @@ const Post: React.FC<{ data: GatsbyTypes.PostQuery }> = ({ data }) => {
   );
 };
 export default Post;
+
+export const Head: React.FC<{ data: GatsbyTypes.PostQuery }> = ({ data }) => {
+  const pageDescription = `${data?.markdownRemark?.frontmatter?.title}の詳細ページ`;
+  return (
+    <HeadContent
+      pageTitle={data?.markdownRemark?.frontmatter?.title}
+      pageDescription={pageDescription}
+    />
+  );
+};
 
 export const query = graphql`
   query Post($id: String) {

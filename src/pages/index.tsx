@@ -5,6 +5,7 @@ import Paragraph from '../components/Paragraph';
 import Layout from '../components/Layout';
 import NotificationList from '../components/NotificationList';
 import { graphql, Link } from 'gatsby';
+import HeadContent from '../components/HeadContent';
 
 const IndexPage: React.FC<{ data: GatsbyTypes.IndexQuery }> = function ({ data }) {
   const recommendedGames = data?.recommendedGames?.nodes?.map(
@@ -30,6 +31,8 @@ const IndexPage: React.FC<{ data: GatsbyTypes.IndexQuery }> = function ({ data }
     </Layout>
   );
 };
+
+export const Head = () => <HeadContent />;
 
 // おすすめ：開発中でないもののうち、おすすめレベルが高い順、同じ場合は更新日時が新しい順
 // 開発中：開発中のもののうち、おすすめレベルが高い順、同じ場合は公開日が早い順

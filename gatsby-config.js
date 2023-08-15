@@ -10,7 +10,6 @@ module.exports = {
         trackingId: 'UA-127082222-2',
       },
     },
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -24,14 +23,14 @@ module.exports = {
       options: {
         name: 'games',
         path: './contents/games/',
-      }
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'notifications',
         path: './contents/notifications/',
-      }
+      },
     },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
