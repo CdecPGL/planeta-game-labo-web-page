@@ -4,11 +4,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 type HeadProps = {
   pageTitle?: string;
   pageDescription?: string;
-  className?: string;
 };
 
-const HeadContent: React.FC<HeadProps> = ({ pageTitle, pageDescription, className = '' }) => {
-  const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
+const HeadContent: React.FC<HeadProps> = ({ pageTitle, pageDescription }) => {
+  const data = useStaticQuery<Queries.HeaderQuery>(graphql`
     query Header {
       site {
         siteMetadata {

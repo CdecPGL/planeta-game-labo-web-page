@@ -1,4 +1,5 @@
 module.exports = {
+  graphqlTypegen: true,
   siteMetadata: {
     siteUrl: 'https://planetagamelabo.com',
     title: 'プラネタゲームラボ',
@@ -34,7 +35,6 @@ module.exports = {
     },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-typegen',
     'gatsby-transformer-sharp',
     'gatsby-transformer-json',
     'gatsby-transformer-remark',

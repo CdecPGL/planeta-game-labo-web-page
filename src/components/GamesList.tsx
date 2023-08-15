@@ -4,7 +4,7 @@ import { ImageDataLike } from 'gatsby-plugin-image';
 import GameCard, { GameCardProps } from './GameCard';
 
 type GameJsonQueryResult = Pick<
-  GatsbyTypes.GamesJson,
+  Queries.GamesJson,
   | 'title'
   | 'genres'
   | 'platforms'
@@ -15,13 +15,13 @@ type GameJsonQueryResult = Pick<
   | 'isDeveloping'
   | 'releaseSchedule'
 > & {
-  defaultPageUrl: GatsbyTypes.GamesJson['gatsbyPath'];
+  defaultPageUrl: Queries.GamesJson['gatsbyPath'];
 } & {
-  readonly screenShots: GatsbyTypes.Maybe<
+  readonly screenShots: Queries.Maybe<
     ReadonlyArray<
-      GatsbyTypes.Maybe<{
-        readonly childImageSharp: GatsbyTypes.Maybe<
-          Pick<GatsbyTypes.ImageSharp, 'gatsbyImageData'>
+    Queries.Maybe<{
+        readonly childImageSharp: Queries.Maybe<
+          Pick<Queries.ImageSharp, 'gatsbyImageData'>
         >;
       }>
     >
@@ -43,8 +43,8 @@ export function getGameCardPropsFromGameJsonQueryResult(
         : result.officialPageUrl,
     thumbnail: result?.screenShots![1] as ImageDataLike | undefined,
     catchPhrase: result.catchPhrase ?? '',
-    isDeveloping: result.isDeveloping,
-    releaseSchedule: result.releaseSchedule,
+    isDeveloping: result.isDeveloping!,
+    releaseSchedule: result.releaseSchedule!,
   };
 }
 

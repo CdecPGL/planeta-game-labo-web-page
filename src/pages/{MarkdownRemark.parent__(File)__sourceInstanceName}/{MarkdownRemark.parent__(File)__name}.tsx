@@ -93,7 +93,7 @@ function processNode(node: Node, id: string) {
   return <div key={id}>{node.children.map((c, i) => processNode(c, `${id}-${i}`))}</div>;
 }
 
-const Post: React.FC<{ data: GatsbyTypes.PostQuery }> = ({ data }) => {
+const Post: React.FC<{ data:Queries.PostQuery }> = ({ data }) => {
   const htmlAst = data?.markdownRemark?.htmlAst as unknown as RootElement;
 
   const createDateText = DateTime.fromISO(
@@ -117,11 +117,11 @@ const Post: React.FC<{ data: GatsbyTypes.PostQuery }> = ({ data }) => {
 };
 export default Post;
 
-export const Head: React.FC<{ data: GatsbyTypes.PostQuery }> = ({ data }) => {
+export const Head: React.FC<{ data: Queries.PostQuery }> = ({ data }) => {
   const pageDescription = `${data?.markdownRemark?.frontmatter?.title}の詳細ページ`;
   return (
     <HeadContent
-      pageTitle={data?.markdownRemark?.frontmatter?.title}
+      pageTitle={data?.markdownRemark?.frontmatter?.title!}
       pageDescription={pageDescription}
     />
   );

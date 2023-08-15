@@ -16,7 +16,7 @@ function getTitle(sourceInstanceName: string) {
 }
 
 const Posts: React.FC<{
-  data: GatsbyTypes.PostsQuery;
+  data: Queries.PostsQuery;
   params: { parent__sourceInstanceName: string };
 }> = ({ data, params }) => {
   const title = getTitle(params.parent__sourceInstanceName);

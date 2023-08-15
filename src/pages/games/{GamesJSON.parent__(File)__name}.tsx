@@ -9,7 +9,7 @@ import Paragraph from '../../components/Paragraph';
 import UnorderedList from '../../components/UnorderedList';
 import HeadContent from '../../components/HeadContent';
 
-function getStoreLink(gameData: GatsbyTypes.GameQuery['gamesJson']) {
+function getStoreLink(gameData: Queries.GameQuery['gamesJson']) {
   if (gameData == null || gameData.stores == null) {
     return <>公開場所なし</>;
   }
@@ -37,7 +37,7 @@ function getStoreLink(gameData: GatsbyTypes.GameQuery['gamesJson']) {
   );
 }
 
-const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
+const Game: React.FC<{ data: Queries.GameQuery }> = ({ data }) => {
   const game = data?.gamesJson;
   if (game == null) {
     throw new Error('Game is null.');
@@ -126,14 +126,14 @@ const Game: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
 };
 export default Game;
 
-export const Head: React.FC<{ data: GatsbyTypes.GameQuery }> = ({ data }) => {
+export const Head: React.FC<{ data: Queries.GameQuery }> = ({ data }) => {
   const game = data?.gamesJson;
   if (game == null) {
     throw new Error('Game is null.');
   }
 
   const pageDescription = `${game.title}の説明ページ`;
-  return <HeadContent pageTitle={game.title} pageDescription={pageDescription} />;
+  return <HeadContent pageTitle={game.title!} pageDescription={pageDescription} />;
 };
 
 export const query = graphql`

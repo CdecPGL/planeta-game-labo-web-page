@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import Paragraph from './Paragraph';
 
 const NotificationList: React.FC = () => {
-  const data = useStaticQuery<GatsbyTypes.NotificationAreaQuery>(graphql`
+  const data = useStaticQuery<Queries.NotificationAreaQuery>(graphql`
     query NotificationArea {
       allFile(
         filter: {

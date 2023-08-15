@@ -7,7 +7,7 @@ import NotificationList from '../components/NotificationList';
 import { graphql, Link } from 'gatsby';
 import HeadContent from '../components/HeadContent';
 
-const IndexPage: React.FC<{ data: GatsbyTypes.IndexQuery }> = function ({ data }) {
+const IndexPage: React.FC<{ data: Queries.IndexQuery }> = function ({ data }) {
   const recommendedGames = data?.recommendedGames?.nodes?.map(
     getGameCardPropsFromGameJsonQueryResult,
   );

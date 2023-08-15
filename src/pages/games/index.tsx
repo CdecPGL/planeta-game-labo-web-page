@@ -5,7 +5,7 @@ import Title from '../../components/Title';
 import GamesList, { getGameCardPropsFromGameJsonQueryResult } from '../../components/GamesList';
 import HeadContent from '../../components/HeadContent';
 
-const Games: React.FC<{ data: GatsbyTypes.GamesQuery }> = ({ data }) => {
+const Games: React.FC<{ data: Queries.GamesQuery }> = ({ data }) => {
   const games = data?.allGamesJson?.nodes?.map(getGameCardPropsFromGameJsonQueryResult);
 
   return (
