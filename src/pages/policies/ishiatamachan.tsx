@@ -22,25 +22,12 @@ const PolicyIchiatamachanPage: React.FC = function () {
         Ads）を利用しており、以下の情報が収集および利用されます。
       </Paragraph>
       <UnorderedList>
-        <li>
-          ユーザーのおおよその位置情報:
-          広告やマーケティング、分析、アプリの機能、不正防止、セキュリティ、コンプライアンス
-        </li>
+        <li>ユーザーのおおよその位置情報</li>
         <li>ユーザーの個人ID: アプリの機能</li>
-        <li>ユーザーの購入履歴: 広告またはマーケティング、分析</li>
-        <li>
-          アプリで表示したページやタップした項目に関するデータ（広告自体のみが対象）:
-          広告やマーケティング、分析、不正防止、セキュリティ、コンプライアンス
-        </li>
-        <li>
-          その他アプリのアクティビティに関するデータ（アプリの使用時間に関するデータのみ）:
-          広告やマーケティング、分析、不正防止、セキュリティ、コンプライアンス
-        </li>
-        <li>アプリの診断情報: アプリの機能、分析</li>
-        <li>
-          ユーザーのデバイスやその他のIDに関するデータ:
-          広告やマーケティング、分析、アプリの機能、不正防止、セキュリティ、コンプライアンス
-        </li>
+        <li>アプリで表示したページやタップした項目に関するデータ（広告自体のみが対象）</li>
+        <li>その他アプリのアクティビティに関するデータ（アプリの使用時間に関するデータのみ）</li>
+        <li>アプリの診断情報</li>
+        <li>ユーザーのデバイスやその他のIDに関するデータ</li>
       </UnorderedList>
       <SubHeading>2. 収集するユーザー情報の管理と第三者提供</SubHeading>
       <Paragraph>
@@ -117,7 +104,10 @@ const PolicyIchiatamachanPage: React.FC = function () {
       </Paragraph>
 
       <UnorderedList>
-        <li>当アプリのGoogleストアページ: https://play.google.com/store/apps/details?id=com.PlanetaGameLabo.Isiatamaaruchan</li>
+        <li>
+          当アプリのGoogleストアページ:
+          https://play.google.com/store/apps/details?id=com.PlanetaGameLabo.Isiatamaaruchan
+        </li>
         <li>当アプリのWindows向け配信ページ: https://www.freem.ne.jp/win/game/9197</li>
         <li>当アプリの公式ページ: https://planetagamelabo.com/games/ishiatamachan/</li>
       </UnorderedList>
