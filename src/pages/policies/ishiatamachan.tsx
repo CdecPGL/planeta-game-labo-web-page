@@ -18,7 +18,7 @@ const PolicyIchiatamachanPage: React.FC = function () {
       <SubHeading>１．収集するユーザー情報と利用目的</SubHeading>
       <Paragraph>
         当アプリでは、広告の表示のみを目的としてユーザー情報を収集しています。
-        広告の表示には第三者であるUnity社の広告サービス（Unity
+        広告の表示には第三者であるUnity Technologiesの広告サービス（Unity
         Ads）を利用しており、以下の情報が収集および利用されます。
       </Paragraph>
       <UnorderedList>
@@ -32,7 +32,7 @@ const PolicyIchiatamachanPage: React.FC = function () {
       <SubHeading>2. 収集するユーザー情報の管理と第三者提供</SubHeading>
       <Paragraph>
         当アプリにおいて、Unity
-        AdsによりUnity社に収集されたデータの管理と第三者提供については、Unity社のプライバシーポリシーに準じます。
+        AdsによりUnity Technologiesに収集されたデータの管理と第三者提供については、Unity Technologiesのプライバシーポリシーに準じます。
         詳細は
         <a href='https://unity.com/ja/legal/game-player-and-app-user-privacy-policy' target='blank'>
           こちら
@@ -47,7 +47,7 @@ const PolicyIchiatamachanPage: React.FC = function () {
         <br />
         また、Unity Adsに関わるプライバシーポリシーの変更については、
         <a href='https://unity.com/ja/legal/game-player-and-app-user-privacy-policy' target='blank'>
-          Unity社のプライバシーポリシー
+          Unity Technologiesのプライバシーポリシー
         </a>
         に準じます。
       </Paragraph>
@@ -112,12 +112,12 @@ const PolicyIchiatamachanPage: React.FC = function () {
         <li>当アプリの公式ページ: https://planetagamelabo.com/games/ishiatamachan/</li>
       </UnorderedList>
 
-      <SubHeading>2. 免責事項</SubHeading>
+      <SubHeading>3. 免責事項</SubHeading>
       <Paragraph>
         PlanetaGameLaboは、当アプリのダウンロード、利用に起因して生じる結果に対し、一切の責任を負いません。
       </Paragraph>
 
-      <SubHeading>3. 本規約の変更について</SubHeading>
+      <SubHeading>4. 本規約の変更について</SubHeading>
       <Paragraph>
         PlanetaGameLaboは、法令の制定、改正等により、本規約を適宜見直し、予告なく変更する場合があります。
         本規約の変更は、変更後の本規約が当サイトに掲載された時点、またはその他の方法により変更後の本規約が閲覧可能となった時点で有効になります。
